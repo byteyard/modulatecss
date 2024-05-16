@@ -15,7 +15,7 @@ Read the docs under [modulatecss.com](https://modulatecss.com/).
 You can install `modulatecss` using npm:
 
 ```bash
-npm install -D modulatecss
+npm install modulatecss
 ```
 
 Or include it directly via CDN:
