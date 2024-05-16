@@ -2,7 +2,7 @@
 
 The `modulatecss` package is designed to distribute ModulateCSS styles, providing a streamlined and scalable solution for modern web development. It allows developers to integrate a comprehensive CSS framework that enhances design consistency, maintainability, and responsiveness across web applications. This package supports both CDN and npm installation methods, making it versatile for different project setups. ModulateCSS leverages advanced CSS techniques such as Grid, Flexbox, and CSS custom properties, ensuring your web designs are robust and future-proof.
 
-Read the docs under [https://modulatecss.com/](https://modulatecss.com/).
+Read the docs under [modulatecss.com](https://modulatecss.com/).
 
 ## Features
 - **Comprehensive Style Distribution:** Ensures consistent styling across your web projects.
