@@ -17,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/byteyard/modulatecss/issues"
   },
-  "homepage": "https://github.com/byteyard/modulatecss#readme",
+  "homepage": "https:///modulatecss.com",
   "devDependencies": {
     "clean-css-cli": "^5.6.3"
   }
