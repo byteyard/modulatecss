@@ -28,7 +28,7 @@ Or include it directly via CDN:
 **Next.js:**
 
 ```javascript
-import 'modulate.css';
+import 'modulatecss/dist/css/modulate.min.css';
 import '@styles/theme.css';
 
 function MyApp({ Component, pageProps }) {
@@ -48,7 +48,7 @@ export default MyApp;
         "build": {
           "options": {
             "styles": [
-              "node_modules/modulate.css/modulate.css",
+              "node_modules/modulatecss/dist/css/modulate.min.css",
               "styles/theme.css"
             ]
           }
@@ -62,7 +62,7 @@ export default MyApp;
 **Vue.js:**
 
 ```javascript
-import 'modulate.css';
+import 'modulatecss/dist/css/modulate.min.css';
 import 'styles/theme.css';
 
 new Vue({
@@ -73,7 +73,7 @@ new Vue({
 **Svelte:**
 
 ```javascript
-import 'modulate.css';
+import 'modulatecss/dist/css/modulate.min.css';
 import 'styles/theme.css';
 
 const app = new App({
@@ -86,7 +86,7 @@ export default app;
 **Gatsby:**
 
 ```javascript
-import 'modulate.css';
+import 'modulatecss/dist/css/modulate.min.css';
 import 'styles/theme.css';
 ```
 
