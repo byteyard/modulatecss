@@ -1,6 +1,6 @@
 {
   "name": "modulatecss",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "A versatile CSS framework for modern web development, supporting advanced features like Grid, Flexbox, and CSS custom properties for scalable, maintainable, and responsive designs.",
   "main": "dist/css/modulate.min.css",
   "style": "dist/css/modulate.min.css",
@@ -8,7 +8,6 @@
     "dist/css/"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "csso src/modulate.css --output dist/modulate.min.css"
   },
   "repository": {
