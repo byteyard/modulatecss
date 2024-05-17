@@ -1,9 +1,6 @@
 {
   "name": "modulatecss",
-  "version": "1.0.18",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
+  "version": "1.0.19",
   "description": "A versatile CSS framework for modern web development, supporting advanced features like Grid, Flexbox, and CSS custom properties for scalable, maintainable, and responsive designs.",
   "main": "dist/css/modulate.min.css",
   "style": "dist/css/modulate.min.css",
@@ -24,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/byteyard/modulatecss/issues"
   },
-  "homepage": "https:///modulatecss.com",
+  "homepage": "https://modulatecss.com",
   "devDependencies": {
     "csso": "^5.0.5",
     "csso-cli": "^4.0.2"
