@@ -1,8 +1,11 @@
-name: Publish to npm
+name: Publish to npm and create GitHub Release
 
 on:
-  release:
-    types: [created]
+  push:
+    paths:
+      - 'package.json'
+    branches:
+      - master
 
 jobs:
   publish:
@@ -11,8 +14,6 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
-      with:
-        fetch-depth: 0  # Fetch all history for all branches and tags
 
     - name: Set up Node.js
       uses: actions/setup-node@v3
@@ -25,19 +26,20 @@ jobs:
     - name: Run build script
       run: npm run build
 
-    - name: Update package version
-      run: npm version ${{ github.event.release.tag_name }} --no-git-tag-version
+    - name: Extract version from package.json
+      id: extract_version
+      run: echo "::set-output name=VERSION::$(node -p -e "require('./package.json').version")"
 
-    - name: Commit and push version change
+    - name: Create GitHub Release
+      id: create_release
+      uses: actions/create-release@v1
       env:
-        GITHUB_TOKEN: ${{ secrets.PAT }}
-      run: |
-        git config --global user.name 'github-actions'
-        git config --global user.email 'github-actions@github.com'
-        git add package.json
-        git commit -m "Update version to ${{ github.event.release.tag_name }}"
-        git remote set-url origin https://x-access-token:${{ secrets.PAT }}@github.com/byteyard/modulatecss.git
-        git push origin HEAD:master
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: v${{ steps.extract_version.outputs.VERSION }}
+        release_name: Release v${{ steps.extract_version.outputs.VERSION }}
+        draft: false
+        prerelease: false
 
     - name: Publish to npm
       env:
