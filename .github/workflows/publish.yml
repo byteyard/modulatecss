@@ -26,6 +26,14 @@ jobs:
     - name: Update package version
       run: npm version ${{ github.event.release.tag_name }} --no-git-tag-version
 
+    - name: Commit and push version change
+      run: |
+        git config --global user.name 'github-actions'
+        git config --global user.email 'github-actions@github.com'
+        git add package.json
+        git commit -m "Update version to ${{ github.event.release.tag_name }}"
+        git push
+
     - name: Publish to npm
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
