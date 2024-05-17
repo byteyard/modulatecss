@@ -1,37 +1,19 @@
 name: Publish to npm and create GitHub Release
 
 on:
-  push:
-    paths:
-      - 'package.json'
-    branches:
-      - master
-
+    push:
+      branches: master
+  
 jobs:
-  publish:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-      with:
-        fetch-depth: 0  # Fetch all history for all branches and tags
-
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '20'
-
-    - name: Install dependencies
-      run: npm install
-
-    - name: Run build script
-      run: npm run build
-
-    - name: Configure npm for publishing
-      run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
-
-    - name: Publish to npm
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      run: npm publish --access public
+    publish:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v3
+              with:
+                node-version: "20"
+            - run: npm ci
+            - run: npm test
+            - uses: JS-DevTools/npm-publish@v3
+              with:
+                token: ${{ secrets.NPM_TOKEN }}
