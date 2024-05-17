@@ -36,7 +36,8 @@ jobs:
         git config --global user.email 'github-actions@github.com'
         git add package.json
         git commit -m "Update version to ${{ github.event.release.tag_name }}"
-        git push https://x-access-token:${{ secrets.PAT }}@github.com/byteyard/modulatecss.git HEAD:master
+        git remote set-url origin https://x-access-token:${{ secrets.PAT }}@github.com/byteyard/modulatecss.git
+        git push origin HEAD:master
 
     - name: Publish to npm
       env:
