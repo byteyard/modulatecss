@@ -26,21 +26,6 @@ jobs:
     - name: Run build script
       run: npm run build
 
-    - name: Extract version from package.json
-      id: extract_version
-      run: echo "::set-output name=VERSION::$(node -p -e "require('./package.json').version")"
-
-    - name: Create GitHub Release
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        tag_name: v${{ steps.extract_version.outputs.VERSION }}
-        release_name: Release v${{ steps.extract_version.outputs.VERSION }}
-        draft: false
-        prerelease: false
-
     - name: Publish to npm
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
