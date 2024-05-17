@@ -30,13 +30,13 @@ jobs:
 
     - name: Commit and push version change
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.PAT }}
       run: |
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'
         git add package.json
         git commit -m "Update version to ${{ github.event.release.tag_name }}"
-        git push origin HEAD:master  # Push changes to the master branch
+        git push https://x-access-token:${{ secrets.PAT }}@github.com/byteyard/modulatecss.git HEAD:master
 
     - name: Publish to npm
       env:
