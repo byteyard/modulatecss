@@ -723,7 +723,6 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(var(--autolayout-width), 1fr));
         column-gap: var(--column-gap);
-        row-gap: var(--row-gap);
         max-inline-size: 100%;
     }
 }
