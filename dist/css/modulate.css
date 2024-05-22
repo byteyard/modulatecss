@@ -5,54 +5,187 @@
 ==================================================================================================== */
 @layer base {
     :root {
-        --rem: 16; /* Pixel per REM for General Fluid Sizing */
-        --s-min: 400; /* Screen Size Min for General Fluid Sizing */
-        --s-max: 1400; /* Screen Size Max for General Fluid Sizing */
-
-        --grid-s-min: 400; /* Screen Size Min for Fluid Sizing of the Grid */
-        --grid-s-max: 1400; /* Screen Size Max for Fluid Sizing of the Grid */
-        --grid-rem: 16; /* Pixel per REM for Fluid Sizing of the Grid */
-        --grid-width-max: 1400; /* Maximum Grid Width */
-        --grid-columns: 12; /* Number of Grid Columns */
-        --grid-padding: 10; /* Grid Padding */
-        --frame-width-min: 0; /* Minimum Frame Width */
-        --frame-width-max: 100; /* Maximum Frame Width */
-        --column-gap-min: 10; /* Minimum Column Gap Width */
-        --column-gap-max: 100; /* Maximum Column Gap Width */
-        --row-gap-min: 10; /* Minimum Row Gap Width */
-        --row-gap-max: 100; /* Maximum Row Gap Width */
-
-        --header-banner-height-min: 0;
-        --header-banner-height-max: 0;
-        --header-mainnav-height-min: 0;
-        --header-mainnav-height-max: 0;
-        --header-subnav-height-min: 0;
-        --header-subnav-height-max: 0;
-
-        --anchor-space-min: 0;
-        --anchor-space-max: 0;
-
-        --spacing-xs-min: 8;
-        --spacing-xs-max: 16;
-        --spacing-sm-min: 16;
-        --spacing-sm-max: 32;
-        --spacing-md-min: 32;
-        --spacing-md-max: 92;
-        --spacing-lg-min: 64;
-        --spacing-lg-max: 128;
-        --spacing-xl-min: 128;
-        --spacing-xl-max: 256;
-        --spacing-2xl-min: 256;
-        --spacing-2xl-max: 512;
-        --autolayout-width: 320px;
-
         --font-optical-sizing: auto;
-        --dir: ltr;
         --quotes-spacing: 0.12em; /* Define spacing units */
         --quotes-primary-open: "“";
         --quotes-primary-close: "”";
         --quotes-secondary-open: "‘";
         --quotes-secondary-close: "’";
+    }
+
+    body {
+        font-optical-sizing: var(--font-optical-sizing);
+    }
+}
+
+/* ====================================================================================================
+    Localization
+==================================================================================================== */
+@layer base {
+    blockquote,
+    q {
+        quotes: var(--quotes-primary-open) var(--quotes-primary-close) var(--quotes-secondary-open) var(--quotes-secondary-close);
+    }
+
+    blockquote:not(:has(p))::before,
+    q:not(:has(p))::before,
+    blockquote:has(p) p:first-of-type::before,
+    q:has(p) p:first-of-type::before {
+        content: open-quote;
+        margin-inline-end: var(--quotes-spacing);
+    }
+
+    blockquote:not(:has(p))::after,
+    q:not(:has(p))::after,
+    blockquote:has(p) p:last-of-type::after,
+    q:has(p) p:last-of-type::after {
+        content: close-quote;
+        margin-inline-start: var(--quotes-spacing);
+    }
+}
+
+/* ====================================================================================================
+    Reset
+==================================================================================================== */
+@layer base {
+    html,
+    body,
+    div,
+    span,
+    applet,
+    object,
+    iframe,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    blockquote,
+    pre,
+    a,
+    abbr,
+    acronym,
+    address,
+    big,
+    cite,
+    code,
+    del,
+    dfn,
+    em,
+    img,
+    ins,
+    kbd,
+    q,
+    s,
+    samp,
+    small,
+    strike,
+    strong,
+    sub,
+    sup,
+    tt,
+    var,
+    b,
+    u,
+    i,
+    center,
+    dl,
+    dt,
+    dd,
+    ol,
+    ul,
+    li,
+    fieldset,
+    form,
+    label,
+    legend,
+    table,
+    caption,
+    tbody,
+    tfoot,
+    thead,
+    tr,
+    th,
+    td,
+    article,
+    aside,
+    canvas,
+    details,
+    embed,
+    figure,
+    figcaption,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    output,
+    ruby,
+    section,
+    summary,
+    time,
+    mark,
+    audio,
+    video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+
+    /* HTML5 display-role reset for older browsers */
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    section {
+        display: block;
+    }
+
+    body {
+        line-height: 1;
+    }
+
+    ol,
+    ul {
+        list-style: none;
+    }
+
+    blockquote,
+    q {
+        quotes: none;
+    }
+
+    blockquote:before,
+    blockquote:after,
+    q:before,
+    q:after {
+        content: "";
+        content: none;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+
+    html {
+        scroll-behavior: smooth;
     }
 }
 
@@ -60,60 +193,10 @@
     Fluid Sizing
 ==================================================================================================== */
 @layer base {
-    body {
-        font-optical-sizing: var(--font-optical-sizing);
-    }
-
     :root {
-        --row-gap-v: calc(((100 * (var(--row-gap-max) - var(--row-gap-min))) / (var(--grid-s-max) - var(--grid-s-min))) * 1vw);
-        --row-gap-r: calc((((var(--grid-s-min) * var(--row-gap-max)) - (var(--grid-s-max) * var(--row-gap-min))) / (var(--grid-s-min) - var(--grid-s-max))) / var(--grid-rem));
-        --row-gap: clamp(calc((var(--row-gap-min) / var(--grid-rem)) * 1rem), calc(var(--row-gap-v) + var(--row-gap-r) * 1rem), calc((var(--row-gap-max) / var(--grid-rem)) * 1rem));
-
-        --column-gap-v: calc(((100 * (var(--column-gap-max) - var(--column-gap-min))) / (var(--grid-s-max) - var(--grid-s-min))) * 1vw);
-        --column-gap-r: calc((((var(--grid-s-min) * var(--column-gap-max)) - (var(--grid-s-max) * var(--column-gap-min))) / (var(--grid-s-min) - var(--grid-s-max))) / var(--grid-rem));
-        --column-gap: clamp(calc((var(--column-gap-min) / var(--grid-rem)) * 1rem), calc(var(--column-gap-v) + var(--column-gap-r) * 1rem), calc((var(--column-gap-max) / var(--grid-rem)) * 1rem));
-
-        --header-banner-height-v: calc(((100 * (var(--header-banner-height-max) - var(--header-banner-height-min))) / (var(--grid-s-max) - var(--grid-s-min))) * 1vw);
-        --header-banner-height-r: calc((((var(--grid-s-min) * var(--header-banner-height-max)) - (var(--grid-s-max) * var(--header-banner-height-min))) / (var(--grid-s-min) - var(--grid-s-max))) / var(--grid-rem));
-        --header-banner-height: clamp(calc((var(--header-banner-height-min) / var(--grid-rem)) * 1rem), calc(var(--header-banner-height-v) + var(--header-banner-height-r) * 1rem), calc((var(--header-banner-height-max) / var(--grid-rem)) * 1rem));
-
-        --header-mainnav-height-v: calc(((100 * (var(--header-mainnav-height-max) - var(--header-mainnav-height-min))) / (var(--grid-s-max) - var(--grid-s-min))) * 1vw);
-        --header-mainnav-height-r: calc((((var(--grid-s-min) * var(--header-mainnav-height-max)) - (var(--grid-s-max) * var(--header-mainnav-height-min))) / (var(--grid-s-min) - var(--grid-s-max))) / var(--grid-rem));
-        --header-mainnav-height: clamp(calc((var(--header-mainnav-height-min) / var(--grid-rem)) * 1rem), calc(var(--header-mainnav-height-v) + var(--header-mainnav-height-r) * 1rem), calc((var(--header-mainnav-height-max) / var(--grid-rem)) * 1rem));
-
-        --header-subnav-height-v: calc(((100 * (var(--header-subnav-height-max) - var(--header-subnav-height-min))) / (var(--grid-s-max) - var(--grid-s-min))) * 1vw);
-        --header-subnav-height-r: calc((((var(--grid-s-min) * var(--header-subnav-height-max)) - (var(--grid-s-max) * var(--header-subnav-height-min))) / (var(--grid-s-min) - var(--grid-s-max))) / var(--grid-rem));
-        --header-subnav-height: clamp(calc((var(--header-subnav-height-min) / var(--grid-rem)) * 1rem), calc(var(--header-subnav-height-v) + var(--header-subnav-height-r) * 1rem), calc((var(--header-subnav-height-max) / var(--grid-rem)) * 1rem));
-
-        --header-height: calc(var(--header-banner-height) + var(--header-mainnav-height) + var(--header-subnav-height));
-
-        --anchor-space-v: calc(((100 * (var(--anchor-space-max) - var(--anchor-space-min))) / (var(--grid-s-max) - var(--grid-s-min))) * 1vw);
-        --anchor-space-r: calc((((var(--grid-s-min) * var(--anchor-space-max)) - (var(--grid-s-max) * var(--anchor-space-min))) / (var(--grid-s-min) - var(--grid-s-max))) / var(--grid-rem));
-        --anchor-space: clamp(calc((var(--anchor-space-min) / var(--grid-rem)) * 1rem), calc(var(--anchor-space-v) + var(--anchor-space-r) * 1rem), calc((var(--anchor-space-max) / var(--grid-rem)) * 1rem));
-
-        --spacing-xs-v: calc(((100 * (var(--spacing-xs-max) - var(--spacing-xs-min))) / (var(--grid-s-max) - var(--grid-s-min))) * 1vw);
-        --spacing-xs-r: calc((((var(--grid-s-min) * var(--spacing-xs-max)) - (var(--grid-s-max) * var(--spacing-xs-min))) / (var(--grid-s-min) - var(--grid-s-max))) / var(--grid-rem));
-        --spacing-xs: clamp(calc((var(--spacing-xs-min) / var(--grid-rem)) * 1rem), calc(var(--spacing-xs-v) + var(--spacing-xs-r) * 1rem), calc((var(--spacing-xs-max) / var(--grid-rem)) * 1rem));
-
-        --spacing-sm-v: calc(((100 * (var(--spacing-sm-max) - var(--spacing-sm-min))) / (var(--grid-s-max) - var(--grid-s-min))) * 1vw);
-        --spacing-sm-r: calc((((var(--grid-s-min) * var(--spacing-sm-max)) - (var(--grid-s-max) * var(--spacing-sm-min))) / (var(--grid-s-min) - var(--grid-s-max))) / var(--grid-rem));
-        --spacing-sm: clamp(calc((var(--spacing-sm-min) / var(--grid-rem)) * 1rem), calc(var(--spacing-sm-v) + var(--spacing-sm-r) * 1rem), calc((var(--spacing-sm-max) / var(--grid-rem)) * 1rem));
-
-        --spacing-md-v: calc(((100 * (var(--spacing-md-max) - var(--spacing-md-min))) / (var(--grid-s-max) - var(--grid-s-min))) * 1vw);
-        --spacing-md-r: calc((((var(--grid-s-min) * var(--spacing-md-max)) - (var(--grid-s-max) * var(--spacing-md-min))) / (var(--grid-s-min) - var(--grid-s-max))) / var(--grid-rem));
-        --spacing-md: clamp(calc((var(--spacing-md-min) / var(--grid-rem)) * 1rem), calc(var(--spacing-md-v) + var(--spacing-md-r) * 1rem), calc((var(--spacing-md-max) / var(--grid-rem)) * 1rem));
-
-        --spacing-lg-v: calc(((100 * (var(--spacing-lg-max) - var(--spacing-lg-min))) / (var(--grid-s-max) - var(--grid-s-min))) * 1vw);
-        --spacing-lg-r: calc((((var(--grid-s-min) * var(--spacing-lg-max)) - (var(--grid-s-max) * var(--spacing-lg-min))) / (var(--grid-s-min) - var(--grid-s-max))) / var(--grid-rem));
-        --spacing-lg: clamp(calc((var(--spacing-lg-min) / var(--grid-rem)) * 1rem), calc(var(--spacing-lg-v) + var(--spacing-lg-r) * 1rem), calc((var(--spacing-lg-max) / var(--grid-rem)) * 1rem));
-
-        --spacing-xl-v: calc(((100 * (var(--spacing-xl-max) - var(--spacing-xl-min))) / (var(--grid-s-max) - var(--grid-s-min))) * 1vw);
-        --spacing-xl-r: calc((((var(--grid-s-min) * var(--spacing-xl-max)) - (var(--grid-s-max) * var(--spacing-xl-min))) / (var(--grid-s-min) - var(--grid-s-max))) / var(--grid-rem));
-        --spacing-xl: clamp(calc((var(--spacing-xl-min) / var(--grid-rem)) * 1rem), calc(var(--spacing-xl-v) + var(--spacing-xl-r) * 1rem), calc((var(--spacing-xl-max) / var(--grid-rem)) * 1rem));
-
-        --spacing-2xl-v: calc(((100 * (var(--spacing-2xl-max) - var(--spacing-2xl-min))) / (var(--grid-s-max) - var(--grid-s-min))) * 1vw);
-        --spacing-2xl-r: calc((((var(--grid-s-min) * var(--spacing-2xl-max)) - (var(--grid-s-max) * var(--spacing-2xl-min))) / (var(--grid-s-min) - var(--grid-s-max))) / var(--grid-rem));
-        --spacing-2xl: clamp(calc((var(--spacing-2xl-min) / var(--grid-rem)) * 1rem), calc(var(--spacing-2xl-v) + var(--spacing-2xl-r) * 1rem), calc((var(--spacing-2xl-max) / var(--grid-rem)) * 1rem));
+        --rem: 16; /* Pixel per REM for General Fluid Sizing */
+        --s-min: 400; /* Screen Size Min for General Fluid Sizing */
+        --s-max: 1400; /* Screen Size Max for General Fluid Sizing */
     }
 
     body * {
@@ -527,6 +610,81 @@
     }
 }
 
+@layer base, typography, primitives, pages, sections, widgets, utilities, theme, overrides;
+
+/* ====================================================================================================
+    Defaults
+==================================================================================================== */
+@layer base {
+    :root {
+        --grid-s-min: 400; /* Screen Size Min for Fluid Sizing of the Grid */
+        --grid-s-max: 1400; /* Screen Size Max for Fluid Sizing of the Grid */
+        --grid-rem: 16; /* Pixel per REM for Fluid Sizing of the Grid */
+        --grid-width-max: 1400; /* Maximum Grid Width */
+        --grid-columns: 12; /* Number of Grid Columns */
+        --grid-padding: 10; /* Grid Padding */
+        --frame-width-min: 0; /* Minimum Frame Width */
+        --frame-width-max: 100; /* Maximum Frame Width */
+        --column-gap-min: 10; /* Minimum Column Gap Width */
+        --column-gap-max: 100; /* Maximum Column Gap Width */
+        --row-gap-min: 10; /* Minimum Row Gap Width */
+        --row-gap-max: 100; /* Maximum Row Gap Width */
+
+        --spacing-xs-min: 8;
+        --spacing-xs-max: 16;
+        --spacing-sm-min: 16;
+        --spacing-sm-max: 32;
+        --spacing-md-min: 32;
+        --spacing-md-max: 92;
+        --spacing-lg-min: 64;
+        --spacing-lg-max: 128;
+        --spacing-xl-min: 128;
+        --spacing-xl-max: 256;
+        --spacing-2xl-min: 256;
+        --spacing-2xl-max: 512;
+        --autolayout-width: 320px;
+    }
+}
+
+/* ====================================================================================================
+    Fluid Sizing
+==================================================================================================== */
+@layer base {
+    :root {
+        --row-gap-v: calc(((100 * (var(--row-gap-max) - var(--row-gap-min))) / (var(--grid-s-max) - var(--grid-s-min))) * 1vw);
+        --row-gap-r: calc((((var(--grid-s-min) * var(--row-gap-max)) - (var(--grid-s-max) * var(--row-gap-min))) / (var(--grid-s-min) - var(--grid-s-max))) / var(--grid-rem));
+        --row-gap: clamp(calc((var(--row-gap-min) / var(--grid-rem)) * 1rem), calc(var(--row-gap-v) + var(--row-gap-r) * 1rem), calc((var(--row-gap-max) / var(--grid-rem)) * 1rem));
+
+        --column-gap-v: calc(((100 * (var(--column-gap-max) - var(--column-gap-min))) / (var(--grid-s-max) - var(--grid-s-min))) * 1vw);
+        --column-gap-r: calc((((var(--grid-s-min) * var(--column-gap-max)) - (var(--grid-s-max) * var(--column-gap-min))) / (var(--grid-s-min) - var(--grid-s-max))) / var(--grid-rem));
+        --column-gap: clamp(calc((var(--column-gap-min) / var(--grid-rem)) * 1rem), calc(var(--column-gap-v) + var(--column-gap-r) * 1rem), calc((var(--column-gap-max) / var(--grid-rem)) * 1rem));
+
+        --spacing-xs-v: calc(((100 * (var(--spacing-xs-max) - var(--spacing-xs-min))) / (var(--grid-s-max) - var(--grid-s-min))) * 1vw);
+        --spacing-xs-r: calc((((var(--grid-s-min) * var(--spacing-xs-max)) - (var(--grid-s-max) * var(--spacing-xs-min))) / (var(--grid-s-min) - var(--grid-s-max))) / var(--grid-rem));
+        --spacing-xs: clamp(calc((var(--spacing-xs-min) / var(--grid-rem)) * 1rem), calc(var(--spacing-xs-v) + var(--spacing-xs-r) * 1rem), calc((var(--spacing-xs-max) / var(--grid-rem)) * 1rem));
+
+        --spacing-sm-v: calc(((100 * (var(--spacing-sm-max) - var(--spacing-sm-min))) / (var(--grid-s-max) - var(--grid-s-min))) * 1vw);
+        --spacing-sm-r: calc((((var(--grid-s-min) * var(--spacing-sm-max)) - (var(--grid-s-max) * var(--spacing-sm-min))) / (var(--grid-s-min) - var(--grid-s-max))) / var(--grid-rem));
+        --spacing-sm: clamp(calc((var(--spacing-sm-min) / var(--grid-rem)) * 1rem), calc(var(--spacing-sm-v) + var(--spacing-sm-r) * 1rem), calc((var(--spacing-sm-max) / var(--grid-rem)) * 1rem));
+
+        --spacing-md-v: calc(((100 * (var(--spacing-md-max) - var(--spacing-md-min))) / (var(--grid-s-max) - var(--grid-s-min))) * 1vw);
+        --spacing-md-r: calc((((var(--grid-s-min) * var(--spacing-md-max)) - (var(--grid-s-max) * var(--spacing-md-min))) / (var(--grid-s-min) - var(--grid-s-max))) / var(--grid-rem));
+        --spacing-md: clamp(calc((var(--spacing-md-min) / var(--grid-rem)) * 1rem), calc(var(--spacing-md-v) + var(--spacing-md-r) * 1rem), calc((var(--spacing-md-max) / var(--grid-rem)) * 1rem));
+
+        --spacing-lg-v: calc(((100 * (var(--spacing-lg-max) - var(--spacing-lg-min))) / (var(--grid-s-max) - var(--grid-s-min))) * 1vw);
+        --spacing-lg-r: calc((((var(--grid-s-min) * var(--spacing-lg-max)) - (var(--grid-s-max) * var(--spacing-lg-min))) / (var(--grid-s-min) - var(--grid-s-max))) / var(--grid-rem));
+        --spacing-lg: clamp(calc((var(--spacing-lg-min) / var(--grid-rem)) * 1rem), calc(var(--spacing-lg-v) + var(--spacing-lg-r) * 1rem), calc((var(--spacing-lg-max) / var(--grid-rem)) * 1rem));
+
+        --spacing-xl-v: calc(((100 * (var(--spacing-xl-max) - var(--spacing-xl-min))) / (var(--grid-s-max) - var(--grid-s-min))) * 1vw);
+        --spacing-xl-r: calc((((var(--grid-s-min) * var(--spacing-xl-max)) - (var(--grid-s-max) * var(--spacing-xl-min))) / (var(--grid-s-min) - var(--grid-s-max))) / var(--grid-rem));
+        --spacing-xl: clamp(calc((var(--spacing-xl-min) / var(--grid-rem)) * 1rem), calc(var(--spacing-xl-v) + var(--spacing-xl-r) * 1rem), calc((var(--spacing-xl-max) / var(--grid-rem)) * 1rem));
+
+        --spacing-2xl-v: calc(((100 * (var(--spacing-2xl-max) - var(--spacing-2xl-min))) / (var(--grid-s-max) - var(--grid-s-min))) * 1vw);
+        --spacing-2xl-r: calc((((var(--grid-s-min) * var(--spacing-2xl-max)) - (var(--grid-s-max) * var(--spacing-2xl-min))) / (var(--grid-s-min) - var(--grid-s-max))) / var(--grid-rem));
+        --spacing-2xl: clamp(calc((var(--spacing-2xl-min) / var(--grid-rem)) * 1rem), calc(var(--spacing-2xl-v) + var(--spacing-2xl-r) * 1rem), calc((var(--spacing-2xl-max) / var(--grid-rem)) * 1rem));
+    }
+}
+
 /* ====================================================================================================
     Layout
 ==================================================================================================== */
@@ -597,14 +755,11 @@
         & > * {
             z-index: 3;
         }
-
-        scroll-margin-top: calc(var(--header-height) + var(--anchor-space));
     }
 
     /* ----------------------------------------------------------------------------------------
         Card Grid
     */
-
     .autolayout {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(var(--autolayout-width), 1fr));
@@ -614,173 +769,46 @@
     }
 }
 
+@layer base, typography, primitives, pages, sections, widgets, utilities, theme, overrides;
+
 /* ====================================================================================================
-    Localization
+    Defaults
 ==================================================================================================== */
 @layer base {
-    blockquote,
-    q {
-        quotes: var(--quotes-primary-open) var(--quotes-primary-close) var(--quotes-secondary-open) var(--quotes-secondary-close);
-    }
+    :root {
+        --header-banner-height-min: 0;
+        --header-banner-height-max: 0;
+        --header-mainnav-height-min: 0;
+        --header-mainnav-height-max: 0;
+        --header-subnav-height-min: 0;
+        --header-subnav-height-max: 0;
 
-    blockquote:not(:has(p))::before,
-    q:not(:has(p))::before,
-    blockquote:has(p) p:first-of-type::before,
-    q:has(p) p:first-of-type::before {
-        content: open-quote;
-        margin-inline-end: var(--quotes-spacing);
-    }
-
-    blockquote:not(:has(p))::after,
-    q:not(:has(p))::after,
-    blockquote:has(p) p:last-of-type::after,
-    q:has(p) p:last-of-type::after {
-        content: close-quote;
-        margin-inline-start: var(--quotes-spacing);
+        --anchor-space-min: 0;
+        --anchor-space-max: 0;
     }
 }
 
 /* ====================================================================================================
-    Reset
+    Fluid Sizing
 ==================================================================================================== */
 @layer base {
-    html,
-    body,
-    div,
-    span,
-    applet,
-    object,
-    iframe,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p,
-    blockquote,
-    pre,
-    a,
-    abbr,
-    acronym,
-    address,
-    big,
-    cite,
-    code,
-    del,
-    dfn,
-    em,
-    img,
-    ins,
-    kbd,
-    q,
-    s,
-    samp,
-    small,
-    strike,
-    strong,
-    sub,
-    sup,
-    tt,
-    var,
-    b,
-    u,
-    i,
-    center,
-    dl,
-    dt,
-    dd,
-    ol,
-    ul,
-    li,
-    fieldset,
-    form,
-    label,
-    legend,
-    table,
-    caption,
-    tbody,
-    tfoot,
-    thead,
-    tr,
-    th,
-    td,
-    article,
-    aside,
-    canvas,
-    details,
-    embed,
-    figure,
-    figcaption,
-    footer,
-    header,
-    hgroup,
-    menu,
-    nav,
-    output,
-    ruby,
-    section,
-    summary,
-    time,
-    mark,
-    audio,
-    video {
-        margin: 0;
-        padding: 0;
-        border: 0;
-        font-size: 100%;
-        font: inherit;
-        vertical-align: baseline;
-    }
+    :root {
+        --header-banner-height-v: calc(((100 * (var(--header-banner-height-max) - var(--header-banner-height-min))) / (var(--grid-s-max) - var(--grid-s-min))) * 1vw);
+        --header-banner-height-r: calc((((var(--grid-s-min) * var(--header-banner-height-max)) - (var(--grid-s-max) * var(--header-banner-height-min))) / (var(--grid-s-min) - var(--grid-s-max))) / var(--grid-rem));
+        --header-banner-height: clamp(calc((var(--header-banner-height-min) / var(--grid-rem)) * 1rem), calc(var(--header-banner-height-v) + var(--header-banner-height-r) * 1rem), calc((var(--header-banner-height-max) / var(--grid-rem)) * 1rem));
 
-    /* HTML5 display-role reset for older browsers */
-    article,
-    aside,
-    details,
-    figcaption,
-    figure,
-    footer,
-    header,
-    hgroup,
-    menu,
-    nav,
-    section {
-        display: block;
-    }
+        --header-mainnav-height-v: calc(((100 * (var(--header-mainnav-height-max) - var(--header-mainnav-height-min))) / (var(--grid-s-max) - var(--grid-s-min))) * 1vw);
+        --header-mainnav-height-r: calc((((var(--grid-s-min) * var(--header-mainnav-height-max)) - (var(--grid-s-max) * var(--header-mainnav-height-min))) / (var(--grid-s-min) - var(--grid-s-max))) / var(--grid-rem));
+        --header-mainnav-height: clamp(calc((var(--header-mainnav-height-min) / var(--grid-rem)) * 1rem), calc(var(--header-mainnav-height-v) + var(--header-mainnav-height-r) * 1rem), calc((var(--header-mainnav-height-max) / var(--grid-rem)) * 1rem));
 
-    body {
-        line-height: 1;
-    }
+        --header-subnav-height-v: calc(((100 * (var(--header-subnav-height-max) - var(--header-subnav-height-min))) / (var(--grid-s-max) - var(--grid-s-min))) * 1vw);
+        --header-subnav-height-r: calc((((var(--grid-s-min) * var(--header-subnav-height-max)) - (var(--grid-s-max) * var(--header-subnav-height-min))) / (var(--grid-s-min) - var(--grid-s-max))) / var(--grid-rem));
+        --header-subnav-height: clamp(calc((var(--header-subnav-height-min) / var(--grid-rem)) * 1rem), calc(var(--header-subnav-height-v) + var(--header-subnav-height-r) * 1rem), calc((var(--header-subnav-height-max) / var(--grid-rem)) * 1rem));
 
-    ol,
-    ul {
-        list-style: none;
-    }
+        --header-height: calc(var(--header-banner-height) + var(--header-mainnav-height) + var(--header-subnav-height));
 
-    blockquote,
-    q {
-        quotes: none;
-    }
-
-    blockquote:before,
-    blockquote:after,
-    q:before,
-    q:after {
-        content: "";
-        content: none;
-    }
-
-    table {
-        border-collapse: collapse;
-        border-spacing: 0;
-    }
-
-    img {
-        width: 100%;
-        height: 100%;
-    }
-
-    html {
-        scroll-behavior: smooth;
+        --anchor-space-v: calc(((100 * (var(--anchor-space-max) - var(--anchor-space-min))) / (var(--grid-s-max) - var(--grid-s-min))) * 1vw);
+        --anchor-space-r: calc((((var(--grid-s-min) * var(--anchor-space-max)) - (var(--grid-s-max) * var(--anchor-space-min))) / (var(--grid-s-min) - var(--grid-s-max))) / var(--grid-rem));
+        --anchor-space: clamp(calc((var(--anchor-space-min) / var(--grid-rem)) * 1rem), calc(var(--anchor-space-v) + var(--anchor-space-r) * 1rem), calc((var(--anchor-space-max) / var(--grid-rem)) * 1rem));
     }
 }

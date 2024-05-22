@@ -1,0 +1,190 @@
+@layer base, typography, primitives, pages, sections, widgets, utilities, theme, overrides;
+
+/* ====================================================================================================
+    Defaults
+==================================================================================================== */
+@layer base {
+    :root {
+        --font-optical-sizing: auto;
+        --quotes-spacing: 0.12em; /* Define spacing units */
+        --quotes-primary-open: "“";
+        --quotes-primary-close: "”";
+        --quotes-secondary-open: "‘";
+        --quotes-secondary-close: "’";
+    }
+
+    body {
+        font-optical-sizing: var(--font-optical-sizing);
+    }
+}
+
+/* ====================================================================================================
+    Localization
+==================================================================================================== */
+@layer base {
+    blockquote,
+    q {
+        quotes: var(--quotes-primary-open) var(--quotes-primary-close) var(--quotes-secondary-open) var(--quotes-secondary-close);
+    }
+
+    blockquote:not(:has(p))::before,
+    q:not(:has(p))::before,
+    blockquote:has(p) p:first-of-type::before,
+    q:has(p) p:first-of-type::before {
+        content: open-quote;
+        margin-inline-end: var(--quotes-spacing);
+    }
+
+    blockquote:not(:has(p))::after,
+    q:not(:has(p))::after,
+    blockquote:has(p) p:last-of-type::after,
+    q:has(p) p:last-of-type::after {
+        content: close-quote;
+        margin-inline-start: var(--quotes-spacing);
+    }
+}
+
+/* ====================================================================================================
+    Reset
+==================================================================================================== */
+@layer base {
+    html,
+    body,
+    div,
+    span,
+    applet,
+    object,
+    iframe,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    blockquote,
+    pre,
+    a,
+    abbr,
+    acronym,
+    address,
+    big,
+    cite,
+    code,
+    del,
+    dfn,
+    em,
+    img,
+    ins,
+    kbd,
+    q,
+    s,
+    samp,
+    small,
+    strike,
+    strong,
+    sub,
+    sup,
+    tt,
+    var,
+    b,
+    u,
+    i,
+    center,
+    dl,
+    dt,
+    dd,
+    ol,
+    ul,
+    li,
+    fieldset,
+    form,
+    label,
+    legend,
+    table,
+    caption,
+    tbody,
+    tfoot,
+    thead,
+    tr,
+    th,
+    td,
+    article,
+    aside,
+    canvas,
+    details,
+    embed,
+    figure,
+    figcaption,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    output,
+    ruby,
+    section,
+    summary,
+    time,
+    mark,
+    audio,
+    video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+
+    /* HTML5 display-role reset for older browsers */
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    section {
+        display: block;
+    }
+
+    body {
+        line-height: 1;
+    }
+
+    ol,
+    ul {
+        list-style: none;
+    }
+
+    blockquote,
+    q {
+        quotes: none;
+    }
+
+    blockquote:before,
+    blockquote:after,
+    q:before,
+    q:after {
+        content: "";
+        content: none;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+}
