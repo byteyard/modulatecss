@@ -1,4 +1,4 @@
-@layer base, typography, primitives, pages, sections, widgets, utilities, theme, overrides;
+@layer base, typography, primitive, page, section, widget, utility, theme, override;
 
 /* ====================================================================================================
     Defaults
@@ -610,7 +610,7 @@
     }
 }
 
-@layer base, typography, primitives, pages, sections, widgets, utilities, theme, overrides;
+@layer base, typography, primitive, page, section, widget, utility, theme, override;
 
 /* ====================================================================================================
     Defaults
@@ -769,7 +769,7 @@
     }
 }
 
-@layer base, typography, primitives, pages, sections, widgets, utilities, theme, overrides;
+@layer base, typography, primitive, page, section, widget, utility, theme, override;
 
 /* ====================================================================================================
     Defaults
