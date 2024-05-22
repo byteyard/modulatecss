@@ -8,7 +8,7 @@
     "dist/css/"
   ],
   "scripts": {
-    "build": "csso src/modulate.css --output dist/modulate.min.css"
+    "build": "csso src/modulate.css --output dist/css/modulate.min.css"
   },
   "repository": {
     "type": "git",
