@@ -545,7 +545,7 @@
         --page-grid-rows: [row-start] minmax(0, min-content) [row-end];
 
         grid-template-rows:
-            [section-start]
+            [module-start]
             var(--section-margin-block-start)
             [frame-start]
             var(--section-padding-block-start)
@@ -553,7 +553,7 @@
             var(--section-padding-block-end)
             [frame-end]
             var(--section-margin-block-end)
-            [section-end];
+            [module-end];
 
         --column-width: [col-start] minmax(0, calc(((var(--grid-width-max) * 1px) - ((var(--grid-columns) - 1) * var(--column-gap))) / var(--grid-columns))) [col-end];
         --gap-half: calc(var(--column-gap) / 2);
@@ -578,45 +578,29 @@
             [screen-end];
 
         /* ----------------------------------------------------------------------------------------
-            Background
+            Backdrop & Background
         */
+        &::before,
+        ::after {
+            content: "";
+            position: relative;
+        }
 
         &::before {
-            content: "";
+            background: var(--cs-backdrop);
+            z-index: 1;
         }
 
         &::after {
             background: var(--cs-background);
-            content: "";
-            position: relative;
-            grid-column: screen-start / screen-end;
-            grid-row: frame-start / frame-end;
-            z-index: 1;
-        }
-
-        &.framed::after {
-            grid-column: frame-start / frame-end;
-        }
-
-        & > * {
             z-index: 2;
         }
 
+        & > * {
+            z-index: 3;
+        }
+
         scroll-margin-top: calc(var(--header-height) + var(--anchor-space));
-    }
-
-    /* ----------------------------------------------------------------------------------------
-        Mirror Layouts horizontally
-    */
-
-    html .page-grid.reverse,
-    html[dir="rtl"] .page-grid.reverse * {
-        direction: rtl;
-    }
-
-    html .page-grid.reverse *,
-    html[dir="rtl"] .page-grid.reverse {
-        direction: ltr;
     }
 
     /* ----------------------------------------------------------------------------------------
@@ -627,6 +611,7 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(var(--autolayout-width), 1fr));
         column-gap: var(--column-gap);
+        row-gap: var(--row-gap);
         max-inline-size: 100%;
     }
 }
