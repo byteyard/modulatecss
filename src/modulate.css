@@ -580,18 +580,16 @@
         /* ----------------------------------------------------------------------------------------
             Backdrop & Background
         */
-        &::before,
-        ::after {
+        &::before {
             content: "";
             position: relative;
-        }
-
-        &::before {
             background: var(--cs-backdrop);
             z-index: 1;
         }
 
         &::after {
+            content: "";
+            position: relative;
             background: var(--cs-background);
             z-index: 2;
         }
