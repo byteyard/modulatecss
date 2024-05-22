@@ -1,4 +1,4 @@
-@layer base, typography, primitive, page, section, widget, utility, theme, override;
+@layer base, typography, primitive, page, module, widget, utility, theme, override;
 
 /* ====================================================================================================
     Defaults
