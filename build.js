@@ -6,7 +6,7 @@ const path = require('path');
 const files = [
   'src/modulate-base.css',
   'src/modulate-fluid-sizing.css',
-  'src/modulate-advanced-page-grid.css',
+  'src/modulate-module-grid.css',
   'src/modulate-header.css'
 ];
 
