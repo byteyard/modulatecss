@@ -50,7 +50,7 @@
     Layout
 ==================================================================================================== */
 @layer base {
-    .page-grid {
+    .module-grid {
         --module-margin-block-start-v: calc(((100 * (var(--module-margin-block-start-max) - var(--module-margin-block-start-min))) / (var(--grid-s-max) - var(--grid-s-min))) * 1vw);
         --module-margin-block-start-r: calc((((var(--grid-s-min) * var(--module-margin-block-start-max)) - (var(--grid-s-max) * var(--module-margin-block-start-min))) / (var(--grid-s-min) - var(--grid-s-max))) / var(--grid-rem));
         --module-margin-block-start: clamp(calc((var(--module-margin-block-start-min) / var(--grid-rem)) * 1rem), calc(var(--module-margin-block-start-v) + var(--module-margin-block-start-r) * 1rem), calc((var(--module-margin-block-start-max) / var(--grid-rem)) * 1rem));
@@ -73,14 +73,14 @@
         width: 100dvw;
         gap: 0;
 
-        --page-grid-rows: [row-start] minmax(0, min-content) [row-end];
+        --module-grid-rows: [row-start] minmax(0, min-content) [row-end];
 
         grid-template-rows:
             [module-start]
             var(--module-margin-block-start)
             [frame-start]
             var(--module-padding-block-start)
-            var(--page-grid-rows)
+            var(--module-grid-rows)
             var(--module-padding-block-end)
             [frame-end]
             var(--module-margin-block-end)
