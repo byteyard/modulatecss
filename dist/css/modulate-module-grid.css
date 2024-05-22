@@ -1,0 +1,143 @@
+@layer base, typography, primitive, page, module, widget, utility, theme, override;
+
+/* ====================================================================================================
+    Defaults
+==================================================================================================== */
+@layer base {
+    :root {
+        --grid-s-min: 400; /* Screen Size Min for Fluid Sizing of the Grid */
+        --grid-s-max: 1400; /* Screen Size Max for Fluid Sizing of the Grid */
+        --grid-rem: 16; /* Pixel per REM for Fluid Sizing of the Grid */
+        --grid-width-max: 1400; /* Maximum Grid Width */
+        --grid-columns: 12; /* Number of Grid Columns */
+        --grid-padding: 10; /* Grid Padding */
+        --frame-width-min: 0; /* Minimum Frame Width */
+        --frame-width-max: 100; /* Maximum Frame Width */
+        --column-gap-min: 10; /* Minimum Column Gap Width */
+        --column-gap-max: 100; /* Maximum Column Gap Width */
+        --row-gap-min: 10; /* Minimum Row Gap Width */
+        --row-gap-max: 100; /* Maximum Row Gap Width */
+
+        --module-padding-block-start-min: 0;
+        --module-padding-block-start-max: 0;
+        --module-padding-block-end-min: 0;
+        --module-padding-block-end-max: 0;
+        --module-margin-block-start-min: 0;
+        --module-margin-block-start-max: 0;
+        --module-margin-block-end-min: 0;
+        --module-margin-block-end-max: 0;
+
+        --autolayout-width: 320px;
+    }
+}
+
+/* ====================================================================================================
+    Fluid Sizing
+==================================================================================================== */
+@layer base {
+    :root {
+        --row-gap-v: calc(((100 * (var(--row-gap-max) - var(--row-gap-min))) / (var(--grid-s-max) - var(--grid-s-min))) * 1vw);
+        --row-gap-r: calc((((var(--grid-s-min) * var(--row-gap-max)) - (var(--grid-s-max) * var(--row-gap-min))) / (var(--grid-s-min) - var(--grid-s-max))) / var(--grid-rem));
+        --row-gap: clamp(calc((var(--row-gap-min) / var(--grid-rem)) * 1rem), calc(var(--row-gap-v) + var(--row-gap-r) * 1rem), calc((var(--row-gap-max) / var(--grid-rem)) * 1rem));
+
+        --column-gap-v: calc(((100 * (var(--column-gap-max) - var(--column-gap-min))) / (var(--grid-s-max) - var(--grid-s-min))) * 1vw);
+        --column-gap-r: calc((((var(--grid-s-min) * var(--column-gap-max)) - (var(--grid-s-max) * var(--column-gap-min))) / (var(--grid-s-min) - var(--grid-s-max))) / var(--grid-rem));
+        --column-gap: clamp(calc((var(--column-gap-min) / var(--grid-rem)) * 1rem), calc(var(--column-gap-v) + var(--column-gap-r) * 1rem), calc((var(--column-gap-max) / var(--grid-rem)) * 1rem));
+    }
+}
+
+/* ====================================================================================================
+    Layout
+==================================================================================================== */
+@layer base {
+    .module-grid {
+        --module-margin-block-start-v: calc(((100 * (var(--module-margin-block-start-max) - var(--module-margin-block-start-min))) / (var(--grid-s-max) - var(--grid-s-min))) * 1vw);
+        --module-margin-block-start-r: calc((((var(--grid-s-min) * var(--module-margin-block-start-max)) - (var(--grid-s-max) * var(--module-margin-block-start-min))) / (var(--grid-s-min) - var(--grid-s-max))) / var(--grid-rem));
+        --module-margin-block-start: clamp(calc((var(--module-margin-block-start-min) / var(--grid-rem)) * 1rem), calc(var(--module-margin-block-start-v) + var(--module-margin-block-start-r) * 1rem), calc((var(--module-margin-block-start-max) / var(--grid-rem)) * 1rem));
+
+        --module-margin-block-end-v: calc(((100 * (var(--module-margin-block-end-max) - var(--module-margin-block-end-min))) / (var(--grid-s-max) - var(--grid-s-min))) * 1vw);
+        --module-margin-block-end-r: calc((((var(--grid-s-min) * var(--module-margin-block-end-max)) - (var(--grid-s-max) * var(--module-margin-block-end-min))) / (var(--grid-s-min) - var(--grid-s-max))) / var(--grid-rem));
+        --module-margin-block-end: clamp(calc((var(--module-margin-block-end-min) / var(--grid-rem)) * 1rem), calc(var(--module-margin-block-end-v) + var(--module-margin-block-end-r) * 1rem), calc((var(--module-margin-block-end-max) / var(--grid-rem)) * 1rem));
+
+        --module-padding-block-start-v: calc(((100 * (var(--module-padding-block-start-max) - var(--module-padding-block-start-min))) / (var(--grid-s-max) - var(--grid-s-min))) * 1vw);
+        --module-padding-block-start-r: calc((((var(--grid-s-min) * var(--module-padding-block-start-max)) - (var(--grid-s-max) * var(--module-padding-block-start-min))) / (var(--grid-s-min) - var(--grid-s-max))) / var(--grid-rem));
+        --module-padding-block-start: clamp(calc((var(--module-padding-block-start-min) / var(--grid-rem)) * 1rem), calc(var(--module-padding-block-start-v) + var(--module-padding-block-start-r) * 1rem), calc((var(--module-padding-block-start-max) / var(--grid-rem)) * 1rem));
+
+        --module-padding-block-end-v: calc(((100 * (var(--module-padding-block-end-max) - var(--module-padding-block-end-min))) / (var(--grid-s-max) - var(--grid-s-min))) * 1vw);
+        --module-padding-block-end-r: calc((((var(--grid-s-min) * var(--module-padding-block-end-max)) - (var(--grid-s-max) * var(--module-padding-block-end-min))) / (var(--grid-s-min) - var(--grid-s-max))) / var(--grid-rem));
+        --module-padding-block-end: clamp(calc((var(--module-padding-block-end-min) / var(--grid-rem)) * 1rem), calc(var(--module-padding-block-end-v) + var(--module-padding-block-end-r) * 1rem), calc((var(--module-padding-block-end-max) / var(--grid-rem)) * 1rem));
+
+        background: var(--cs-background-framed);
+        position: relative;
+        display: grid;
+        width: 100dvw;
+        gap: 0;
+
+        --module-grid-rows: [row-start] minmax(0, min-content) [row-end];
+
+        grid-template-rows:
+            [module-start]
+            var(--module-margin-block-start)
+            [frame-start]
+            var(--module-padding-block-start)
+            var(--module-grid-rows)
+            var(--module-padding-block-end)
+            [frame-end]
+            var(--module-margin-block-end)
+            [module-end];
+
+        --column-width: [col-start] minmax(0, calc(((var(--grid-width-max) * 1px) - ((var(--grid-columns) - 1) * var(--column-gap))) / var(--grid-columns))) [col-end];
+        --gap-half: calc(var(--column-gap) / 2);
+        --split-gap: var(--gap-half) [gap] var(--gap-half);
+        --column-repeat: repeat(calc((var(--grid-columns) / 2) - 1), var(--column-width) var(--split-gap));
+        --columns: var(--column-repeat) var(--column-width) var(--split-gap) var(--column-repeat) var(--column-width);
+        --frame-width: minmax(calc(var(--frame-width-min) * 1px), calc(var(--frame-width-max) * 1px));
+
+        grid-template-columns:
+            [screen-start]
+            calc(var(--grid-padding) * 1px)
+            [padding-start]
+            1fr
+            [frame-start]
+            var(--frame-width)
+            var(--columns)
+            var(--frame-width)
+            [frame-end]
+            1fr
+            [padding-end]
+            calc(var(--grid-padding) * 1px)
+            [screen-end];
+
+        /* ----------------------------------------------------------------------------------------
+            Backdrop & Background
+        */
+        &::before {
+            content: "";
+            position: relative;
+            background: var(--cs-backdrop);
+            z-index: 1;
+        }
+
+        &::after {
+            content: "";
+            position: relative;
+            background: var(--cs-background);
+            z-index: 2;
+        }
+
+        & > * {
+            z-index: 3;
+        }
+    }
+
+    /* ----------------------------------------------------------------------------------------
+        Card Grid
+    */
+    .autolayout {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(var(--autolayout-width), 1fr));
+        column-gap: var(--column-gap);
+        row-gap: var(--row-gap);
+        max-inline-size: 100%;
+    }
+}
