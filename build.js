@@ -5,16 +5,23 @@ const path = require('path');
 // List of CSS files to be processed
 const files = [
   'src/modulate-base.css',
-  'src/modulate-fluid-sizing.css',
+  'src/modulate-fluid-sizing-basic.css',
+  'src/modulate-fluid-sizing-classic.css',
+  'src/modulate-fluid-sizing-modern.css',
   'src/modulate-module-grid.css',
   'src/modulate-header.css'
 ];
 
 // Ensure the dist/css directory exists
 const distDir = 'dist/css';
-if (!fs.existsSync(distDir)){
-    fs.mkdirSync(distDir, { recursive: true });
+
+// Delete all files under dist/css
+if (fs.existsSync(distDir)) {
+  fs.rmSync(distDir, { recursive: true, force: true });
 }
+
+// Recreate the dist/css directory
+fs.mkdirSync(distDir, { recursive: true });
 
 // Process each file
 files.forEach(file => {

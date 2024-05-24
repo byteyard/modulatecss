@@ -240,44 +240,6 @@
         --tuo: clamp(calc((var(--tuo-min) / var(--rem)) * 1rem), calc(var(--tuo-v) + var(--tuo-r) * 1rem), calc((var(--tuo-max) / var(--rem)) * 1rem));
 
         /* ----------------------------------------------------------------------------------------
-            Block
-        */
-
-        /* block-size: bs */
-        --bs-v: calc(((100 * (var(--bs-max) - var(--bs-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --bs-r: calc((((var(--s-min) * var(--bs-max)) - (var(--s-max) * var(--bs-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --bs: clamp(calc((var(--bs-min) / var(--rem)) * 1rem), calc(var(--bs-v) + var(--bs-r) * 1rem), calc((var(--bs-max) / var(--rem)) * 1rem));
-
-        /* min-block-size: minbs */
-        --minbs-v: calc(((100 * (var(--minbs-max) - var(--minbs-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --minbs-r: calc((((var(--s-min) * var(--minbs-max)) - (var(--s-max) * var(--minbs-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --minbs: clamp(calc((var(--minbs-min) / var(--rem)) * 1rem), calc(var(--minbs-v) + var(--minbs-r) * 1rem), calc((var(--minbs-max) / var(--rem)) * 1rem));
-
-        /* max-block-size: maxbs */
-        --maxbs-v: calc(((100 * (var(--maxbs-max) - var(--maxbs-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --maxbs-r: calc((((var(--s-min) * var(--maxbs-max)) - (var(--s-max) * var(--maxbs-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --maxbs: clamp(calc((var(--maxbs-min) / var(--rem)) * 1rem), calc(var(--maxbs-v) + var(--maxbs-r) * 1rem), calc((var(--maxbs-max) / var(--rem)) * 1rem));
-
-        /* ----------------------------------------------------------------------------------------
-            Inline
-        */
-
-        /* inline-size: is */
-        --is-v: calc(((100 * (var(--is-max) - var(--is-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --is-r: calc((((var(--s-min) * var(--is-max)) - (var(--s-max) * var(--is-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --is: clamp(calc((var(--is-min) / var(--rem)) * 1rem), calc(var(--is-v) + var(--is-r) * 1rem), calc((var(--is-max) / var(--rem)) * 1rem));
-
-        /* min-inline-size: minis */
-        --minis-v: calc(((100 * (var(--minis-max) - var(--minis-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --minis-r: calc((((var(--s-min) * var(--minis-max)) - (var(--s-max) * var(--minis-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --minis: clamp(calc((var(--minis-min) / var(--rem)) * 1rem), calc(var(--minis-v) + var(--minis-r) * 1rem), calc((var(--minis-max) / var(--rem)) * 1rem));
-
-        /* max-inline-size: maxis */
-        --maxis-v: calc(((100 * (var(--maxis-max) - var(--maxis-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --maxis-r: calc((((var(--s-min) * var(--maxis-max)) - (var(--s-max) * var(--maxis-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --maxis: clamp(calc((var(--maxis-min) / var(--rem)) * 1rem), calc(var(--maxis-v) + var(--maxis-r) * 1rem), calc((var(--maxis-max) / var(--rem)) * 1rem));
-
-        /* ----------------------------------------------------------------------------------------
             Margin
         */
 
@@ -285,36 +247,6 @@
         --m-v: calc(((100 * (var(--m-max) - var(--m-min))) / (var(--s-max) - var(--s-min))) * 1vw);
         --m-r: calc((((var(--s-min) * var(--m-max)) - (var(--s-max) * var(--m-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
         --m: clamp(calc((var(--m-min) / var(--rem)) * 1rem), calc(var(--m-v) + var(--m-r) * 1rem), calc((var(--m-max) / var(--rem)) * 1rem));
-
-        /* margin-block: mb */
-        --mb-v: calc(((100 * (var(--mb-max) - var(--mb-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --mb-r: calc((((var(--s-min) * var(--mb-max)) - (var(--s-max) * var(--mb-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --mb: clamp(calc((var(--mb-min) / var(--rem)) * 1rem), calc(var(--mb-v) + var(--mb-r) * 1rem), calc((var(--mb-max) / var(--rem)) * 1rem));
-
-        /* margin-block-start: mbs */
-        --mbs-v: calc(((100 * (var(--mbs-max) - var(--mbs-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --mbs-r: calc((((var(--s-min) * var(--mbs-max)) - (var(--s-max) * var(--mbs-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --mbs: clamp(calc((var(--mbs-min) / var(--rem)) * 1rem), calc(var(--mbs-v) + var(--mbs-r) * 1rem), calc((var(--mbs-max) / var(--rem)) * 1rem));
-
-        /* margin-block-end: mbe */
-        --mbe-v: calc(((100 * (var(--mbe-max) - var(--mbe-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --mbe-r: calc((((var(--s-min) * var(--mbe-max)) - (var(--s-max) * var(--mbe-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --mbe: clamp(calc((var(--mbe-min) / var(--rem)) * 1rem), calc(var(--mbe-v) + var(--mbe-r) * 1rem), calc((var(--mbe-max) / var(--rem)) * 1rem));
-
-        /* margin-inline: mi */
-        --mi-v: calc(((100 * (var(--mi-max) - var(--mi-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --mi-r: calc((((var(--s-min) * var(--mi-max)) - (var(--s-max) * var(--mi-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --mi: clamp(calc((var(--mi-min) / var(--rem)) * 1rem), calc(var(--mi-v) + var(--mi-r) * 1rem), calc((var(--mi-max) / var(--rem)) * 1rem));
-
-        /* margin-inline-start: mis */
-        --mis-v: calc(((100 * (var(--mis-max) - var(--mis-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --mis-r: calc((((var(--s-min) * var(--mis-max)) - (var(--s-max) * var(--mis-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --mis: clamp(calc((var(--mis-min) / var(--rem)) * 1rem), calc(var(--mis-v) + var(--mis-r) * 1rem), calc((var(--mis-max) / var(--rem)) * 1rem));
-
-        /* margin-inline-end: mie */
-        --mie-v: calc(((100 * (var(--mie-max) - var(--mie-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --mie-r: calc((((var(--s-min) * var(--mie-max)) - (var(--s-max) * var(--mie-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --mie: clamp(calc((var(--mie-min) / var(--rem)) * 1rem), calc(var(--mie-v) + var(--mie-r) * 1rem), calc((var(--mie-max) / var(--rem)) * 1rem));
 
         /* ----------------------------------------------------------------------------------------
             Padding
@@ -325,36 +257,6 @@
         --p-r: calc((((var(--s-min) * var(--p-max)) - (var(--s-max) * var(--p-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
         --p: clamp(calc((var(--p-min) / var(--rem)) * 1rem), calc(var(--p-v) + var(--p-r) * 1rem), calc((var(--p-max) / var(--rem)) * 1rem));
 
-        /* padding-block: pb */
-        --pb-v: calc(((100 * (var(--pb-max) - var(--pb-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --pb-r: calc((((var(--s-min) * var(--pb-max)) - (var(--s-max) * var(--pb-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --pb: clamp(calc((var(--pb-min) / var(--rem)) * 1rem), calc(var(--pb-v) + var(--pb-r) * 1rem), calc((var(--pb-max) / var(--rem)) * 1rem));
-
-        /* padding-block-start: pbs */
-        --pbs-v: calc(((100 * (var(--pbs-max) - var(--pbs-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --pbs-r: calc((((var(--s-min) * var(--pbs-max)) - (var(--s-max) * var(--pbs-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --pbs: clamp(calc((var(--pbs-min) / var(--rem)) * 1rem), calc(var(--pbs-v) + var(--pbs-r) * 1rem), calc((var(--pbs-max) / var(--rem)) * 1rem));
-
-        /* padding-block-end: pbe */
-        --pbe-v: calc(((100 * (var(--pbe-max) - var(--pbe-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --pbe-r: calc((((var(--s-min) * var(--pbe-max)) - (var(--s-max) * var(--pbe-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --pbe: clamp(calc((var(--pbe-min) / var(--rem)) * 1rem), calc(var(--pbe-v) + var(--pbe-r) * 1rem), calc((var(--pbe-max) / var(--rem)) * 1rem));
-
-        /* padding-inline: pi */
-        --pi-v: calc(((100 * (var(--pi-max) - var(--pi-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --pi-r: calc((((var(--s-min) * var(--pi-max)) - (var(--s-max) * var(--pi-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --pi: clamp(calc((var(--pi-min) / var(--rem)) * 1rem), calc(var(--pi-v) + var(--pi-r) * 1rem), calc((var(--pi-max) / var(--rem)) * 1rem));
-
-        /* padding-inline-start: pis */
-        --pis-v: calc(((100 * (var(--pis-max) - var(--pis-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --pis-r: calc((((var(--s-min) * var(--pis-max)) - (var(--s-max) * var(--pis-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --pis: clamp(calc((var(--pis-min) / var(--rem)) * 1rem), calc(var(--pis-v) + var(--pis-r) * 1rem), calc((var(--pis-max) / var(--rem)) * 1rem));
-
-        /* padding-inline-end: pie */
-        --pie-v: calc(((100 * (var(--pie-max) - var(--pie-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --pie-r: calc((((var(--s-min) * var(--pie-max)) - (var(--s-max) * var(--pie-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --pie: clamp(calc((var(--pie-min) / var(--rem)) * 1rem), calc(var(--pie-v) + var(--pie-r) * 1rem), calc((var(--pie-max) / var(--rem)) * 1rem));
-
         /* ----------------------------------------------------------------------------------------
             Border Width
         */
@@ -364,36 +266,6 @@
         --bw-r: calc((((var(--s-min) * var(--bw-max)) - (var(--s-max) * var(--bw-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
         --bw: clamp(calc((var(--bw-min) / var(--rem)) * 1rem), calc(var(--bw-v) + var(--bw-r) * 1rem), calc((var(--bw-max) / var(--rem)) * 1rem));
 
-        /* border-block-width: bbw */
-        --bbw-v: calc(((100 * (var(--bbw-max) - var(--bbw-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --bbw-r: calc((((var(--s-min) * var(--bbw-max)) - (var(--s-max) * var(--bbw-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --bbw: clamp(calc((var(--bbw-min) / var(--rem)) * 1rem), calc(var(--bbw-v) + var(--bbw-r) * 1rem), calc((var(--bbw-max) / var(--rem)) * 1rem));
-
-        /* border-block-start-width: bbsw */
-        --bbsw-v: calc(((100 * (var(--bbsw-max) - var(--bbsw-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --bbsw-r: calc((((var(--s-min) * var(--bbsw-max)) - (var(--s-max) * var(--bbsw-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --bbsw: clamp(calc((var(--bbsw-min) / var(--rem)) * 1rem), calc(var(--bbsw-v) + var(--bbsw-r) * 1rem), calc((var(--bbsw-max) / var(--rem)) * 1rem));
-
-        /* border-block-end-width: bbew */
-        --bbew-v: calc(((100 * (var(--bbew-max) - var(--bbew-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --bbew-r: calc((((var(--s-min) * var(--bbew-max)) - (var(--s-max) * var(--bbew-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --bbew: clamp(calc((var(--bbew-min) / var(--rem)) * 1rem), calc(var(--bbew-v) + var(--bbew-r) * 1rem), calc((var(--bbew-max) / var(--rem)) * 1rem));
-
-        /* border-inline-width: biw */
-        --biw-v: calc(((100 * (var(--biw-max) - var(--biw-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --biw-r: calc((((var(--s-min) * var(--biw-max)) - (var(--s-max) * var(--biw-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --biw: clamp(calc((var(--biw-min) / var(--rem)) * 1rem), calc(var(--biw-v) + var(--biw-r) * 1rem), calc((var(--biw-max) / var(--rem)) * 1rem));
-
-        /* border-inline-start-width: bisw */
-        --bisw-v: calc(((100 * (var(--bisw-max) - var(--bisw-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --bisw-r: calc((((var(--s-min) * var(--bisw-max)) - (var(--s-max) * var(--bisw-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --bisw: clamp(calc((var(--bisw-min) / var(--rem)) * 1rem), calc(var(--bisw-v) + var(--bisw-r) * 1rem), calc((var(--bisw-max) / var(--rem)) * 1rem));
-
-        /* border-inline-end-width: biew */
-        --biew-v: calc(((100 * (var(--biew-max) - var(--biew-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --biew-r: calc((((var(--s-min) * var(--biew-max)) - (var(--s-max) * var(--biew-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --biew: clamp(calc((var(--biew-min) / var(--rem)) * 1rem), calc(var(--biew-v) + var(--biew-r) * 1rem), calc((var(--biew-max) / var(--rem)) * 1rem));
-
         /* ----------------------------------------------------------------------------------------
             Border Radius
         */
@@ -402,26 +274,6 @@
         --br-v: calc(((100 * (var(--br-max) - var(--br-min))) / (var(--s-max) - var(--s-min))) * 1vw);
         --br-r: calc((((var(--s-min) * var(--br-max)) - (var(--s-max) * var(--br-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
         --br: clamp(calc((var(--br-min) / var(--rem)) * 1rem), calc(var(--br-v) + var(--br-r) * 1rem), calc((var(--br-max) / var(--rem)) * 1rem));
-
-        /* border-start-start-radius: bssr */
-        --bssr-v: calc(((100 * (var(--bssr-max) - var(--bssr-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --bssr-r: calc((((var(--s-min) * var(--bssr-max)) - (var(--s-max) * var(--bssr-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --bssr: clamp(calc((var(--bssr-min) / var(--rem)) * 1rem), calc(var(--bssr-v) + var(--bssr-r) * 1rem), calc((var(--bssr-max) / var(--rem)) * 1rem));
-
-        /*border-start-end-radius: bser */
-        --bser-v: calc(((100 * (var(--bser-max) - var(--bser-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --bser-r: calc((((var(--s-min) * var(--bser-max)) - (var(--s-max) * var(--bser-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --bser: clamp(calc((var(--bser-min) / var(--rem)) * 1rem), calc(var(--bser-v) + var(--bser-r) * 1rem), calc((var(--bser-max) / var(--rem)) * 1rem));
-
-        /*border-end-end-radius: beer */
-        --beer-v: calc(((100 * (var(--beer-max) - var(--beer-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --beer-r: calc((((var(--s-min) * var(--beer-max)) - (var(--s-max) * var(--beer-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --beer: clamp(calc((var(--beer-min) / var(--rem)) * 1rem), calc(var(--beer-v) + var(--beer-r) * 1rem), calc((var(--beer-max) / var(--rem)) * 1rem));
-
-        /* border-end-start-radius: besr */
-        --besr-v: calc(((100 * (var(--besr-max) - var(--besr-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --besr-r: calc((((var(--s-min) * var(--besr-max)) - (var(--s-max) * var(--besr-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --besr: clamp(calc((var(--besr-min) / var(--rem)) * 1rem), calc(var(--besr-v) + var(--besr-r) * 1rem), calc((var(--besr-max) / var(--rem)) * 1rem));
 
         /* ----------------------------------------------------------------------------------------
             Outline
@@ -445,36 +297,6 @@
         --i-v: calc(((100 * (var(--i-max) - var(--i-min))) / (var(--s-max) - var(--s-min))) * 1vw);
         --i-r: calc((((var(--s-min) * var(--i-max)) - (var(--s-max) * var(--i-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
         --i: clamp(calc((var(--i-min) / var(--rem)) * 1rem), calc(var(--i-v) + var(--i-r) * 1rem), calc((var(--i-max) / var(--rem)) * 1rem));
-
-        /* inset-block: ib */
-        --ib-v: calc(((100 * (var(--ib-max) - var(--ib-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --ib-r: calc((((var(--s-min) * var(--ib-max)) - (var(--s-max) * var(--ib-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --ib: clamp(calc((var(--ib-min) / var(--rem)) * 1rem), calc(var(--ib-v) + var(--ib-r) * 1rem), calc((var(--ib-max) / var(--rem)) * 1rem));
-
-        /* inset-block-start: ibs */
-        --ibs-v: calc(((100 * (var(--ibs-max) - var(--ibs-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --ibs-r: calc((((var(--s-min) * var(--ibs-max)) - (var(--s-max) * var(--ibs-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --ibs: clamp(calc((var(--ibs-min) / var(--rem)) * 1rem), calc(var(--ibs-v) + var(--ibs-r) * 1rem), calc((var(--ibs-max) / var(--rem)) * 1rem));
-
-        /* inset-block-end: ibe */
-        --ibe-v: calc(((100 * (var(--ibe-max) - var(--ibe-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --ibe-r: calc((((var(--s-min) * var(--ibe-max)) - (var(--s-max) * var(--ibe-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --ibe: clamp(calc((var(--ibe-min) / var(--rem)) * 1rem), calc(var(--ibe-v) + var(--ibe-r) * 1rem), calc((var(--ibe-max) / var(--rem)) * 1rem));
-
-        /* inset-inline: ii */
-        --ii-v: calc(((100 * (var(--ii-max) - var(--ii-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --ii-r: calc((((var(--s-min) * var(--ii-max)) - (var(--s-max) * var(--ii-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --ii: clamp(calc((var(--ii-min) / var(--rem)) * 1rem), calc(var(--ii-v) + var(--ii-r) * 1rem), calc((var(--ii-max) / var(--rem)) * 1rem));
-
-        /* inset-inline-start: iis */
-        --iis-v: calc(((100 * (var(--iis-max) - var(--iis-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --iis-r: calc((((var(--s-min) * var(--iis-max)) - (var(--s-max) * var(--iis-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --iis: clamp(calc((var(--iis-min) / var(--rem)) * 1rem), calc(var(--iis-v) + var(--iis-r) * 1rem), calc((var(--iis-max) / var(--rem)) * 1rem));
-
-        /* inset-inline-end: iie */
-        --iie-v: calc(((100 * (var(--iie-max) - var(--iie-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --iie-r: calc((((var(--s-min) * var(--iie-max)) - (var(--s-max) * var(--iie-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --iie: clamp(calc((var(--iie-min) / var(--rem)) * 1rem), calc(var(--iie-v) + var(--iie-r) * 1rem), calc((var(--iie-max) / var(--rem)) * 1rem));
 
         /* ----------------------------------------------------------------------------------------
             Grid, Flex and Columns
@@ -543,6 +365,455 @@
         --sm-r: calc((((var(--s-min) * var(--sm-max)) - (var(--s-max) * var(--sm-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
         --sm: clamp(calc((var(--sm-min) / var(--rem)) * 1rem), calc(var(--sm-v) + var(--sm-r) * 1rem), calc((var(--sm-max) / var(--rem)) * 1rem));
 
+        /* scroll-padding: sp */
+        --sp-v: calc(((100 * (var(--sp-max) - var(--sp-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --sp-r: calc((((var(--s-min) * var(--sp-max)) - (var(--s-max) * var(--sp-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --sp: clamp(calc((var(--sp-min) / var(--rem)) * 1rem), calc(var(--sp-v) + var(--sp-r) * 1rem), calc((var(--sp-max) / var(--rem)) * 1rem));
+    }
+}
+
+/* ====================================================================================================
+    Fluid Sizing
+==================================================================================================== */
+@layer base {
+    :root {
+        --rem: 16; /* Pixel per REM for General Fluid Sizing */
+        --s-min: 400; /* Screen Size Min for General Fluid Sizing */
+        --s-max: 1400; /* Screen Size Max for General Fluid Sizing */
+    }
+
+    body * {
+        /* ----------------------------------------------------------------------------------------
+            Block
+        */
+
+        /* height: bs */
+        --h-v: calc(((100 * (var(--h-max) - var(--h-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --h-r: calc((((var(--s-min) * var(--h-max)) - (var(--s-max) * var(--h-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --h: clamp(calc((var(--h-min) / var(--rem)) * 1rem), calc(var(--h-v) + var(--h-r) * 1rem), calc((var(--h-max) / var(--rem)) * 1rem));
+
+        /* min-height: minh */
+        --minh-v: calc(((100 * (var(--minh-max) - var(--minh-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --minh-r: calc((((var(--s-min) * var(--minh-max)) - (var(--s-max) * var(--minh-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --minh: clamp(calc((var(--minh-min) / var(--rem)) * 1rem), calc(var(--minh-v) + var(--minh-r) * 1rem), calc((var(--minh-max) / var(--rem)) * 1rem));
+
+        /* max-height: maxh */
+        --maxh-v: calc(((100 * (var(--maxh-max) - var(--maxh-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --maxh-r: calc((((var(--s-min) * var(--maxh-max)) - (var(--s-max) * var(--maxh-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --maxh: clamp(calc((var(--maxh-min) / var(--rem)) * 1rem), calc(var(--maxh-v) + var(--maxh-r) * 1rem), calc((var(--maxh-max) / var(--rem)) * 1rem));
+
+        /* ----------------------------------------------------------------------------------------
+            Width
+        */
+
+        /* width: is */
+        --w-v: calc(((100 * (var(--w-max) - var(--w-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --w-r: calc((((var(--s-min) * var(--w-max)) - (var(--s-max) * var(--w-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --w: clamp(calc((var(--w-min) / var(--rem)) * 1rem), calc(var(--w-v) + var(--w-r) * 1rem), calc((var(--w-max) / var(--rem)) * 1rem));
+
+        /* min-width: minw */
+        --minw-v: calc(((100 * (var(--minw-max) - var(--minw-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --minw-r: calc((((var(--s-min) * var(--minw-max)) - (var(--s-max) * var(--minw-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --minw: clamp(calc((var(--minw-min) / var(--rem)) * 1rem), calc(var(--minw-v) + var(--minw-r) * 1rem), calc((var(--minw-max) / var(--rem)) * 1rem));
+
+        /* max-width: maxw */
+        --maxw-v: calc(((100 * (var(--maxw-max) - var(--maxw-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --maxw-r: calc((((var(--s-min) * var(--maxw-max)) - (var(--s-max) * var(--maxw-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --maxw: clamp(calc((var(--maxw-min) / var(--rem)) * 1rem), calc(var(--maxw-v) + var(--maxw-r) * 1rem), calc((var(--maxw-max) / var(--rem)) * 1rem));
+
+        /* ----------------------------------------------------------------------------------------
+            Margin
+        */
+
+        /* margin-top: mt */
+        --mt-v: calc(((100 * (var(--mt-max) - var(--mt-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --mt-r: calc((((var(--s-min) * var(--mt-max)) - (var(--s-max) * var(--mt-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --mt: clamp(calc((var(--mt-min) / var(--rem)) * 1rem), calc(var(--mt-v) + var(--mt-r) * 1rem), calc((var(--mt-max) / var(--rem)) * 1rem));
+
+        /* margin-bottom: mb */
+        --mb-v: calc(((100 * (var(--mb-max) - var(--mb-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --mb-r: calc((((var(--s-min) * var(--mb-max)) - (var(--s-max) * var(--mb-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --mb: clamp(calc((var(--mb-min) / var(--rem)) * 1rem), calc(var(--mb-v) + var(--mb-r) * 1rem), calc((var(--mb-max) / var(--rem)) * 1rem));
+
+        /* margin-left: ml */
+        --ml-v: calc(((100 * (var(--ml-max) - var(--ml-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --ml-r: calc((((var(--s-min) * var(--ml-max)) - (var(--s-max) * var(--ml-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --ml: clamp(calc((var(--ml-min) / var(--rem)) * 1rem), calc(var(--ml-v) + var(--ml-r) * 1rem), calc((var(--ml-max) / var(--rem)) * 1rem));
+
+        /* margin-right: mr */
+        --mr-v: calc(((100 * (var(--mr-max) - var(--mr-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --mr-r: calc((((var(--s-min) * var(--mr-max)) - (var(--s-max) * var(--mr-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --mr: clamp(calc((var(--mr-min) / var(--rem)) * 1rem), calc(var(--mr-v) + var(--mr-r) * 1rem), calc((var(--mr-max) / var(--rem)) * 1rem));
+
+        /* ----------------------------------------------------------------------------------------
+            Padding
+        */
+
+        /* padding-top: pt */
+        --pt-v: calc(((100 * (var(--pt-max) - var(--pt-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --pt-r: calc((((var(--s-min) * var(--pt-max)) - (var(--s-max) * var(--pt-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --pt: clamp(calc((var(--pt-min) / var(--rem)) * 1rem), calc(var(--pt-v) + var(--pt-r) * 1rem), calc((var(--pt-max) / var(--rem)) * 1rem));
+
+        /* padding-bottom: pb */
+        --pb-v: calc(((100 * (var(--pb-max) - var(--pb-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --pb-r: calc((((var(--s-min) * var(--pb-max)) - (var(--s-max) * var(--pb-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --pb: clamp(calc((var(--pb-min) / var(--rem)) * 1rem), calc(var(--pb-v) + var(--pb-r) * 1rem), calc((var(--pb-max) / var(--rem)) * 1rem));
+
+        /* padding-left: pl */
+        --pl-v: calc(((100 * (var(--pl-max) - var(--pl-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --pl-r: calc((((var(--s-min) * var(--pl-max)) - (var(--s-max) * var(--pl-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --pl: clamp(calc((var(--pl-min) / var(--rem)) * 1rem), calc(var(--pl-v) + var(--pl-r) * 1rem), calc((var(--pl-max) / var(--rem)) * 1rem));
+
+        /* padding-right: pr */
+        --pr-v: calc(((100 * (var(--pr-max) - var(--pr-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --pr-r: calc((((var(--s-min) * var(--pr-max)) - (var(--s-max) * var(--pr-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --pr: clamp(calc((var(--pr-min) / var(--rem)) * 1rem), calc(var(--pr-v) + var(--pr-r) * 1rem), calc((var(--pr-max) / var(--rem)) * 1rem));
+
+        /* ----------------------------------------------------------------------------------------
+            Border Width
+        */
+
+        /* border-top-width: btw */
+        --btw-v: calc(((100 * (var(--btw-max) - var(--btw-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --btw-r: calc((((var(--s-min) * var(--btw-max)) - (var(--s-max) * var(--btw-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --btw: clamp(calc((var(--btw-min) / var(--rem)) * 1rem), calc(var(--btw-v) + var(--btw-r) * 1rem), calc((var(--btw-max) / var(--rem)) * 1rem));
+
+        /* border-bottom-width: bbw */
+        --bbw-v: calc(((100 * (var(--bbw-max) - var(--bbw-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --bbw-r: calc((((var(--s-min) * var(--bbw-max)) - (var(--s-max) * var(--bbw-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --bbw: clamp(calc((var(--bbw-min) / var(--rem)) * 1rem), calc(var(--bbw-v) + var(--bbw-r) * 1rem), calc((var(--bbw-max) / var(--rem)) * 1rem));
+
+        /* border-left-width: blw */
+        --blw-v: calc(((100 * (var(--blw-max) - var(--blw-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --blw-r: calc((((var(--s-min) * var(--blw-max)) - (var(--s-max) * var(--blw-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --blw: clamp(calc((var(--blw-min) / var(--rem)) * 1rem), calc(var(--blw-v) + var(--blw-r) * 1rem), calc((var(--blw-max) / var(--rem)) * 1rem));
+
+        /* border-right-width: bbrw */
+        --bbrw-v: calc(((100 * (var(--bbrw-max) - var(--bbrw-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --bbrw-r: calc((((var(--s-min) * var(--bbrw-max)) - (var(--s-max) * var(--bbrw-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --bbrw: clamp(calc((var(--bbrw-min) / var(--rem)) * 1rem), calc(var(--bbrw-v) + var(--bbrw-r) * 1rem), calc((var(--bbrw-max) / var(--rem)) * 1rem));
+
+        /* ----------------------------------------------------------------------------------------
+            Border Radius
+        */
+
+        /* border-top-left-radius: btlr */
+        --btlr-v: calc(((100 * (var(--btlr-max) - var(--btlr-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --btlr-r: calc((((var(--s-min) * var(--btlr-max)) - (var(--s-max) * var(--btlr-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --btlr: clamp(calc((var(--btlr-min) / var(--rem)) * 1rem), calc(var(--btlr-v) + var(--btlr-r) * 1rem), calc((var(--btlr-max) / var(--rem)) * 1rem));
+
+        /* border-top-right-radius: btrr */
+        --btrr-v: calc(((100 * (var(--btrr-max) - var(--btrr-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --btrr-r: calc((((var(--s-min) * var(--btrr-max)) - (var(--s-max) * var(--btrr-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --btrr: clamp(calc((var(--btrr-min) / var(--rem)) * 1rem), calc(var(--btrr-v) + var(--btrr-r) * 1rem), calc((var(--btrr-max) / var(--rem)) * 1rem));
+
+        /* border-bottom-right-radius: bbrr */
+        --bbrr-v: calc(((100 * (var(--bbrr-max) - var(--bbrr-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --bbrr-r: calc((((var(--s-min) * var(--bbrr-max)) - (var(--s-max) * var(--bbrr-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --bbrr: clamp(calc((var(--bbrr-min) / var(--rem)) * 1rem), calc(var(--bbrr-v) + var(--bbrr-r) * 1rem), calc((var(--bbrr-max) / var(--rem)) * 1rem));
+
+        /* border-bottom-left-radius: bblr */
+        --bblr-v: calc(((100 * (var(--bblr-max) - var(--bblr-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --bblr-r: calc((((var(--s-min) * var(--bblr-max)) - (var(--s-max) * var(--bblr-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --bblr: clamp(calc((var(--bblr-min) / var(--rem)) * 1rem), calc(var(--bblr-v) + var(--bblr-r) * 1rem), calc((var(--bblr-max) / var(--rem)) * 1rem));
+
+        /* ----------------------------------------------------------------------------------------
+            Inset
+        */
+
+        /* inset-top: ibt */
+        --ibt-v: calc(((100 * (var(--ibt-max) - var(--ibt-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --ibt-r: calc((((var(--s-min) * var(--ibt-max)) - (var(--s-max) * var(--ibt-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --ibt: clamp(calc((var(--ibt-min) / var(--rem)) * 1rem), calc(var(--ibt-v) + var(--ibt-r) * 1rem), calc((var(--ibt-max) / var(--rem)) * 1rem));
+
+        /* inset-bottom: ibb */
+        --ibb-v: calc(((100 * (var(--ibb-max) - var(--ibb-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --ibb-r: calc((((var(--s-min) * var(--ibb-max)) - (var(--s-max) * var(--ibb-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --ibb: clamp(calc((var(--ibb-min) / var(--rem)) * 1rem), calc(var(--ibb-v) + var(--ibb-r) * 1rem), calc((var(--ibb-max) / var(--rem)) * 1rem));
+
+        /* inset-left: il */
+        --il-v: calc(((100 * (var(--il-max) - var(--il-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --il-r: calc((((var(--s-min) * var(--il-max)) - (var(--s-max) * var(--il-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --il: clamp(calc((var(--il-min) / var(--rem)) * 1rem), calc(var(--il-v) + var(--il-r) * 1rem), calc((var(--il-max) / var(--rem)) * 1rem));
+
+        /* inset-right: ir */
+        --ir-v: calc(((100 * (var(--ir-max) - var(--ir-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --ir-r: calc((((var(--s-min) * var(--ir-max)) - (var(--s-max) * var(--ir-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --ir: clamp(calc((var(--ir-min) / var(--rem)) * 1rem), calc(var(--ir-v) + var(--ir-r) * 1rem), calc((var(--ir-max) / var(--rem)) * 1rem));
+
+        /* ----------------------------------------------------------------------------------------
+            Scroll
+        */
+
+        /* scroll-margin-top: smt */
+        --smt-v: calc(((100 * (var(--smt-max) - var(--smt-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --smt-r: calc((((var(--s-min) * var(--smt-max)) - (var(--s-max) * var(--smt-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --smt: clamp(calc((var(--smt-min) / var(--rem)) * 1rem), calc(var(--smt-v) + var(--smt-r) * 1rem), calc((var(--smt-max) / var(--rem)) * 1rem));
+
+        /* scroll-margin-bottom: smb */
+        --smb-v: calc(((100 * (var(--smb-max) - var(--smb-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --smb-r: calc((((var(--s-min) * var(--smb-max)) - (var(--s-max) * var(--smb-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --smb: clamp(calc((var(--smb-min) / var(--rem)) * 1rem), calc(var(--smb-v) + var(--smb-r) * 1rem), calc((var(--smb-max) / var(--rem)) * 1rem));
+
+        /* scroll-margin-left: sml */
+        --sml-v: calc(((100 * (var(--sml-max) - var(--sml-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --sml-r: calc((((var(--s-min) * var(--sml-max)) - (var(--s-max) * var(--sml-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --sml: clamp(calc((var(--sml-min) / var(--rem)) * 1rem), calc(var(--sml-v) + var(--sml-r) * 1rem), calc((var(--sml-max) / var(--rem)) * 1rem));
+
+        /* scroll-margin-right: smr */
+        --smr-v: calc(((100 * (var(--smr-max) - var(--smr-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --smr-r: calc((((var(--s-min) * var(--smr-max)) - (var(--s-max) * var(--smr-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --smr: clamp(calc((var(--smr-min) / var(--rem)) * 1rem), calc(var(--smr-v) + var(--smr-r) * 1rem), calc((var(--smr-max) / var(--rem)) * 1rem));
+
+        /* scroll-padding-top: spt */
+        --spt-v: calc(((100 * (var(--spt-max) - var(--spt-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --spt-r: calc((((var(--s-min) * var(--spt-max)) - (var(--s-max) * var(--spt-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --spt: clamp(calc((var(--spt-min) / var(--rem)) * 1rem), calc(var(--spt-v) + var(--spt-r) * 1rem), calc((var(--spt-max) / var(--rem)) * 1rem));
+
+        /* scroll-padding-bottom: spb */
+        --spb-v: calc(((100 * (var(--spb-max) - var(--spb-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --spb-r: calc((((var(--s-min) * var(--spb-max)) - (var(--s-max) * var(--spb-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --spb: clamp(calc((var(--spb-min) / var(--rem)) * 1rem), calc(var(--spb-v) + var(--spb-r) * 1rem), calc((var(--spb-max) / var(--rem)) * 1rem));
+
+        /* scroll-padding-left: spl */
+        --spl-v: calc(((100 * (var(--spl-max) - var(--spl-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --spl-r: calc((((var(--s-min) * var(--spl-max)) - (var(--s-max) * var(--spl-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --spl: clamp(calc((var(--spl-min) / var(--rem)) * 1rem), calc(var(--spl-v) + var(--spl-r) * 1rem), calc((var(--spl-max) / var(--rem)) * 1rem));
+
+        /* scroll-padding-right: spr */
+        --spr-v: calc(((100 * (var(--spr-max) - var(--spr-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --spr-r: calc((((var(--s-min) * var(--spr-max)) - (var(--s-max) * var(--spr-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --spr: clamp(calc((var(--spr-min) / var(--rem)) * 1rem), calc(var(--spr-v) + var(--spr-r) * 1rem), calc((var(--spr-max) / var(--rem)) * 1rem));
+    }
+}
+
+/* ====================================================================================================
+    Fluid Sizing
+==================================================================================================== */
+@layer base {
+    :root {
+        --rem: 16; /* Pixel per REM for General Fluid Sizing */
+        --s-min: 400; /* Screen Size Min for General Fluid Sizing */
+        --s-max: 1400; /* Screen Size Max for General Fluid Sizing */
+    }
+
+    body * {
+        /* ----------------------------------------------------------------------------------------
+            Block
+        */
+
+        /* block-size: bs */
+        --bs-v: calc(((100 * (var(--bs-max) - var(--bs-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --bs-r: calc((((var(--s-min) * var(--bs-max)) - (var(--s-max) * var(--bs-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --bs: clamp(calc((var(--bs-min) / var(--rem)) * 1rem), calc(var(--bs-v) + var(--bs-r) * 1rem), calc((var(--bs-max) / var(--rem)) * 1rem));
+
+        /* min-block-size: minbs */
+        --minbs-v: calc(((100 * (var(--minbs-max) - var(--minbs-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --minbs-r: calc((((var(--s-min) * var(--minbs-max)) - (var(--s-max) * var(--minbs-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --minbs: clamp(calc((var(--minbs-min) / var(--rem)) * 1rem), calc(var(--minbs-v) + var(--minbs-r) * 1rem), calc((var(--minbs-max) / var(--rem)) * 1rem));
+
+        /* max-block-size: maxbs */
+        --maxbs-v: calc(((100 * (var(--maxbs-max) - var(--maxbs-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --maxbs-r: calc((((var(--s-min) * var(--maxbs-max)) - (var(--s-max) * var(--maxbs-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --maxbs: clamp(calc((var(--maxbs-min) / var(--rem)) * 1rem), calc(var(--maxbs-v) + var(--maxbs-r) * 1rem), calc((var(--maxbs-max) / var(--rem)) * 1rem));
+
+        /* ----------------------------------------------------------------------------------------
+            Inline
+        */
+
+        /* inline-size: is */
+        --is-v: calc(((100 * (var(--is-max) - var(--is-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --is-r: calc((((var(--s-min) * var(--is-max)) - (var(--s-max) * var(--is-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --is: clamp(calc((var(--is-min) / var(--rem)) * 1rem), calc(var(--is-v) + var(--is-r) * 1rem), calc((var(--is-max) / var(--rem)) * 1rem));
+
+        /* min-inline-size: minis */
+        --minis-v: calc(((100 * (var(--minis-max) - var(--minis-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --minis-r: calc((((var(--s-min) * var(--minis-max)) - (var(--s-max) * var(--minis-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --minis: clamp(calc((var(--minis-min) / var(--rem)) * 1rem), calc(var(--minis-v) + var(--minis-r) * 1rem), calc((var(--minis-max) / var(--rem)) * 1rem));
+
+        /* max-inline-size: maxis */
+        --maxis-v: calc(((100 * (var(--maxis-max) - var(--maxis-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --maxis-r: calc((((var(--s-min) * var(--maxis-max)) - (var(--s-max) * var(--maxis-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --maxis: clamp(calc((var(--maxis-min) / var(--rem)) * 1rem), calc(var(--maxis-v) + var(--maxis-r) * 1rem), calc((var(--maxis-max) / var(--rem)) * 1rem));
+
+        /* ----------------------------------------------------------------------------------------
+            Margin
+        */
+
+        /* margin-block: mb */
+        --mb-v: calc(((100 * (var(--mb-max) - var(--mb-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --mb-r: calc((((var(--s-min) * var(--mb-max)) - (var(--s-max) * var(--mb-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --mb: clamp(calc((var(--mb-min) / var(--rem)) * 1rem), calc(var(--mb-v) + var(--mb-r) * 1rem), calc((var(--mb-max) / var(--rem)) * 1rem));
+
+        /* margin-block-start: mbs */
+        --mbs-v: calc(((100 * (var(--mbs-max) - var(--mbs-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --mbs-r: calc((((var(--s-min) * var(--mbs-max)) - (var(--s-max) * var(--mbs-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --mbs: clamp(calc((var(--mbs-min) / var(--rem)) * 1rem), calc(var(--mbs-v) + var(--mbs-r) * 1rem), calc((var(--mbs-max) / var(--rem)) * 1rem));
+
+        /* margin-block-end: mbe */
+        --mbe-v: calc(((100 * (var(--mbe-max) - var(--mbe-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --mbe-r: calc((((var(--s-min) * var(--mbe-max)) - (var(--s-max) * var(--mbe-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --mbe: clamp(calc((var(--mbe-min) / var(--rem)) * 1rem), calc(var(--mbe-v) + var(--mbe-r) * 1rem), calc((var(--mbe-max) / var(--rem)) * 1rem));
+
+        /* margin-inline: mi */
+        --mi-v: calc(((100 * (var(--mi-max) - var(--mi-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --mi-r: calc((((var(--s-min) * var(--mi-max)) - (var(--s-max) * var(--mi-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --mi: clamp(calc((var(--mi-min) / var(--rem)) * 1rem), calc(var(--mi-v) + var(--mi-r) * 1rem), calc((var(--mi-max) / var(--rem)) * 1rem));
+
+        /* margin-inline-start: mis */
+        --mis-v: calc(((100 * (var(--mis-max) - var(--mis-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --mis-r: calc((((var(--s-min) * var(--mis-max)) - (var(--s-max) * var(--mis-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --mis: clamp(calc((var(--mis-min) / var(--rem)) * 1rem), calc(var(--mis-v) + var(--mis-r) * 1rem), calc((var(--mis-max) / var(--rem)) * 1rem));
+
+        /* margin-inline-end: mie */
+        --mie-v: calc(((100 * (var(--mie-max) - var(--mie-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --mie-r: calc((((var(--s-min) * var(--mie-max)) - (var(--s-max) * var(--mie-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --mie: clamp(calc((var(--mie-min) / var(--rem)) * 1rem), calc(var(--mie-v) + var(--mie-r) * 1rem), calc((var(--mie-max) / var(--rem)) * 1rem));
+
+        /* ----------------------------------------------------------------------------------------
+            Padding
+        */
+
+        /* padding-block: pb */
+        --pb-v: calc(((100 * (var(--pb-max) - var(--pb-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --pb-r: calc((((var(--s-min) * var(--pb-max)) - (var(--s-max) * var(--pb-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --pb: clamp(calc((var(--pb-min) / var(--rem)) * 1rem), calc(var(--pb-v) + var(--pb-r) * 1rem), calc((var(--pb-max) / var(--rem)) * 1rem));
+
+        /* padding-block-start: pbs */
+        --pbs-v: calc(((100 * (var(--pbs-max) - var(--pbs-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --pbs-r: calc((((var(--s-min) * var(--pbs-max)) - (var(--s-max) * var(--pbs-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --pbs: clamp(calc((var(--pbs-min) / var(--rem)) * 1rem), calc(var(--pbs-v) + var(--pbs-r) * 1rem), calc((var(--pbs-max) / var(--rem)) * 1rem));
+
+        /* padding-block-end: pbe */
+        --pbe-v: calc(((100 * (var(--pbe-max) - var(--pbe-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --pbe-r: calc((((var(--s-min) * var(--pbe-max)) - (var(--s-max) * var(--pbe-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --pbe: clamp(calc((var(--pbe-min) / var(--rem)) * 1rem), calc(var(--pbe-v) + var(--pbe-r) * 1rem), calc((var(--pbe-max) / var(--rem)) * 1rem));
+
+        /* padding-inline: pi */
+        --pi-v: calc(((100 * (var(--pi-max) - var(--pi-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --pi-r: calc((((var(--s-min) * var(--pi-max)) - (var(--s-max) * var(--pi-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --pi: clamp(calc((var(--pi-min) / var(--rem)) * 1rem), calc(var(--pi-v) + var(--pi-r) * 1rem), calc((var(--pi-max) / var(--rem)) * 1rem));
+
+        /* padding-inline-start: pis */
+        --pis-v: calc(((100 * (var(--pis-max) - var(--pis-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --pis-r: calc((((var(--s-min) * var(--pis-max)) - (var(--s-max) * var(--pis-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --pis: clamp(calc((var(--pis-min) / var(--rem)) * 1rem), calc(var(--pis-v) + var(--pis-r) * 1rem), calc((var(--pis-max) / var(--rem)) * 1rem));
+
+        /* padding-inline-end: pie */
+        --pie-v: calc(((100 * (var(--pie-max) - var(--pie-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --pie-r: calc((((var(--s-min) * var(--pie-max)) - (var(--s-max) * var(--pie-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --pie: clamp(calc((var(--pie-min) / var(--rem)) * 1rem), calc(var(--pie-v) + var(--pie-r) * 1rem), calc((var(--pie-max) / var(--rem)) * 1rem));
+
+        /* ----------------------------------------------------------------------------------------
+            Border Width
+        */
+
+        /* border-block-width: bbw */
+        --bbw-v: calc(((100 * (var(--bbw-max) - var(--bbw-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --bbw-r: calc((((var(--s-min) * var(--bbw-max)) - (var(--s-max) * var(--bbw-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --bbw: clamp(calc((var(--bbw-min) / var(--rem)) * 1rem), calc(var(--bbw-v) + var(--bbw-r) * 1rem), calc((var(--bbw-max) / var(--rem)) * 1rem));
+
+        /* border-block-start-width: bbsw */
+        --bbsw-v: calc(((100 * (var(--bbsw-max) - var(--bbsw-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --bbsw-r: calc((((var(--s-min) * var(--bbsw-max)) - (var(--s-max) * var(--bbsw-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --bbsw: clamp(calc((var(--bbsw-min) / var(--rem)) * 1rem), calc(var(--bbsw-v) + var(--bbsw-r) * 1rem), calc((var(--bbsw-max) / var(--rem)) * 1rem));
+
+        /* border-block-end-width: bbew */
+        --bbew-v: calc(((100 * (var(--bbew-max) - var(--bbew-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --bbew-r: calc((((var(--s-min) * var(--bbew-max)) - (var(--s-max) * var(--bbew-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --bbew: clamp(calc((var(--bbew-min) / var(--rem)) * 1rem), calc(var(--bbew-v) + var(--bbew-r) * 1rem), calc((var(--bbew-max) / var(--rem)) * 1rem));
+
+        /* border-inline-width: biw */
+        --biw-v: calc(((100 * (var(--biw-max) - var(--biw-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --biw-r: calc((((var(--s-min) * var(--biw-max)) - (var(--s-max) * var(--biw-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --biw: clamp(calc((var(--biw-min) / var(--rem)) * 1rem), calc(var(--biw-v) + var(--biw-r) * 1rem), calc((var(--biw-max) / var(--rem)) * 1rem));
+
+        /* border-inline-start-width: bisw */
+        --bisw-v: calc(((100 * (var(--bisw-max) - var(--bisw-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --bisw-r: calc((((var(--s-min) * var(--bisw-max)) - (var(--s-max) * var(--bisw-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --bisw: clamp(calc((var(--bisw-min) / var(--rem)) * 1rem), calc(var(--bisw-v) + var(--bisw-r) * 1rem), calc((var(--bisw-max) / var(--rem)) * 1rem));
+
+        /* border-inline-end-width: biew */
+        --biew-v: calc(((100 * (var(--biew-max) - var(--biew-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --biew-r: calc((((var(--s-min) * var(--biew-max)) - (var(--s-max) * var(--biew-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --biew: clamp(calc((var(--biew-min) / var(--rem)) * 1rem), calc(var(--biew-v) + var(--biew-r) * 1rem), calc((var(--biew-max) / var(--rem)) * 1rem));
+
+        /* ----------------------------------------------------------------------------------------
+            Border Radius
+        */
+
+        /* border-start-start-radius: bssr */
+        --bssr-v: calc(((100 * (var(--bssr-max) - var(--bssr-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --bssr-r: calc((((var(--s-min) * var(--bssr-max)) - (var(--s-max) * var(--bssr-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --bssr: clamp(calc((var(--bssr-min) / var(--rem)) * 1rem), calc(var(--bssr-v) + var(--bssr-r) * 1rem), calc((var(--bssr-max) / var(--rem)) * 1rem));
+
+        /* border-start-end-radius: bser */
+        --bser-v: calc(((100 * (var(--bser-max) - var(--bser-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --bser-r: calc((((var(--s-min) * var(--bser-max)) - (var(--s-max) * var(--bser-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --bser: clamp(calc((var(--bser-min) / var(--rem)) * 1rem), calc(var(--bser-v) + var(--bser-r) * 1rem), calc((var(--bser-max) / var(--rem)) * 1rem));
+
+        /* border-end-end-radius: beer */
+        --beer-v: calc(((100 * (var(--beer-max) - var(--beer-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --beer-r: calc((((var(--s-min) * var(--beer-max)) - (var(--s-max) * var(--beer-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --beer: clamp(calc((var(--beer-min) / var(--rem)) * 1rem), calc(var(--beer-v) + var(--beer-r) * 1rem), calc((var(--beer-max) / var(--rem)) * 1rem));
+
+        /* border-end-start-radius: besr */
+        --besr-v: calc(((100 * (var(--besr-max) - var(--besr-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --besr-r: calc((((var(--s-min) * var(--besr-max)) - (var(--s-max) * var(--besr-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --besr: clamp(calc((var(--besr-min) / var(--rem)) * 1rem), calc(var(--besr-v) + var(--besr-r) * 1rem), calc((var(--besr-max) / var(--rem)) * 1rem));
+
+        /* ----------------------------------------------------------------------------------------
+            Inset
+        */
+
+        /* inset-block: ib */
+        --ib-v: calc(((100 * (var(--ib-max) - var(--ib-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --ib-r: calc((((var(--s-min) * var(--ib-max)) - (var(--s-max) * var(--ib-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --ib: clamp(calc((var(--ib-min) / var(--rem)) * 1rem), calc(var(--ib-v) + var(--ib-r) * 1rem), calc((var(--ib-max) / var(--rem)) * 1rem));
+
+        /* inset-block-start: ibs */
+        --ibs-v: calc(((100 * (var(--ibs-max) - var(--ibs-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --ibs-r: calc((((var(--s-min) * var(--ibs-max)) - (var(--s-max) * var(--ibs-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --ibs: clamp(calc((var(--ibs-min) / var(--rem)) * 1rem), calc(var(--ibs-v) + var(--ibs-r) * 1rem), calc((var(--ibs-max) / var(--rem)) * 1rem));
+
+        /* inset-block-end: ibe */
+        --ibe-v: calc(((100 * (var(--ibe-max) - var(--ibe-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --ibe-r: calc((((var(--s-min) * var(--ibe-max)) - (var(--s-max) * var(--ibe-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --ibe: clamp(calc((var(--ibe-min) / var(--rem)) * 1rem), calc(var(--ibe-v) + var(--ibe-r) * 1rem), calc((var(--ibe-max) / var(--rem)) * 1rem));
+
+        /* inset-inline: ii */
+        --ii-v: calc(((100 * (var(--ii-max) - var(--ii-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --ii-r: calc((((var(--s-min) * var(--ii-max)) - (var(--s-max) * var(--ii-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --ii: clamp(calc((var(--ii-min) / var(--rem)) * 1rem), calc(var(--ii-v) + var(--ii-r) * 1rem), calc((var(--ii-max) / var(--rem)) * 1rem));
+
+        /* inset-inline-start: iis */
+        --iis-v: calc(((100 * (var(--iis-max) - var(--iis-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --iis-r: calc((((var(--s-min) * var(--iis-max)) - (var(--s-max) * var(--iis-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --iis: clamp(calc((var(--iis-min) / var(--rem)) * 1rem), calc(var(--iis-v) + var(--iis-r) * 1rem), calc((var(--iis-max) / var(--rem)) * 1rem));
+
+        /* inset-inline-end: iie */
+        --iie-v: calc(((100 * (var(--iie-max) - var(--iie-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --iie-r: calc((((var(--s-min) * var(--iie-max)) - (var(--s-max) * var(--iie-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --iie: clamp(calc((var(--iie-min) / var(--rem)) * 1rem), calc(var(--iie-v) + var(--iie-r) * 1rem), calc((var(--iie-max) / var(--rem)) * 1rem));
+
+        /* ----------------------------------------------------------------------------------------
+            Background
+        */
+
+        /* background-position-x: bpx */
+        --bpx-v: calc(((100 * (var(--bpx-max) - var(--bpx-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --bpx-r: calc((((var(--s-min) * var(--bpx-max)) - (var(--s-max) * var(--bpx-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --bpx: clamp(calc((var(--bpx-min) / var(--rem)) * 1rem), calc(var(--bpx-v) + var(--bpx-r) * 1rem), calc((var(--bpx-max) / var(--rem)) * 1rem));
+
+        /* background-position-y: bpy */
+        --bpy-v: calc(((100 * (var(--bpy-max) - var(--bpy-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --bpy-r: calc((((var(--s-min) * var(--bpy-max)) - (var(--s-max) * var(--bpy-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --bpy: clamp(calc((var(--bpy-min) / var(--rem)) * 1rem), calc(var(--bpy-v) + var(--bpy-r) * 1rem), calc((var(--bpy-max) / var(--rem)) * 1rem));
+
+        /* ----------------------------------------------------------------------------------------
+            Scroll
+        */
+
         /* scroll-margin-block: smb */
         --smb-v: calc(((100 * (var(--smb-max) - var(--smb-min))) / (var(--s-max) - var(--s-min))) * 1vw);
         --smb-r: calc((((var(--s-min) * var(--smb-max)) - (var(--s-max) * var(--smb-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
@@ -572,11 +843,6 @@
         --smie-v: calc(((100 * (var(--smie-max) - var(--smie-min))) / (var(--s-max) - var(--s-min))) * 1vw);
         --smie-r: calc((((var(--s-min) * var(--smie-max)) - (var(--s-max) * var(--smie-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
         --smie: clamp(calc((var(--smie-min) / var(--rem)) * 1rem), calc(var(--smie-v) + var(--smie-r) * 1rem), calc((var(--smie-max) / var(--rem)) * 1rem));
-
-        /* scroll-padding: sp */
-        --sp-v: calc(((100 * (var(--sp-max) - var(--sp-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --sp-r: calc((((var(--s-min) * var(--sp-max)) - (var(--s-max) * var(--sp-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --sp: clamp(calc((var(--sp-min) / var(--rem)) * 1rem), calc(var(--sp-v) + var(--sp-r) * 1rem), calc((var(--sp-max) / var(--rem)) * 1rem));
 
         /* scroll-padding-block: spb */
         --spb-v: calc(((100 * (var(--spb-max) - var(--spb-min))) / (var(--s-max) - var(--s-min))) * 1vw);

@@ -1,6 +1,6 @@
 {
   "name": "modulatecss",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "description": "A versatile CSS framework for modern web development, supporting advanced features like Grid, Flexbox, and CSS custom properties for scalable, maintainable, and responsive designs.",
   "main": "dist/css/modulate.min.css",
   "style": "dist/css/modulate.min.css",
