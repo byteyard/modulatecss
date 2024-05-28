@@ -3,10 +3,18 @@ const csso = require('csso');
 const path = require('path');
 
 // List of CSS files to be processed
-const files = [
+const allFiles = [
   'src/modulate-base.css',
   'src/modulate-fluid-sizing-basic.css',
   'src/modulate-fluid-sizing-classic.css',
+  'src/modulate-fluid-sizing-modern.css',
+  'src/modulate-module-grid.css',
+  'src/modulate-header.css'
+];
+
+const package1Files = [
+  'src/modulate-base.css',
+  'src/modulate-fluid-sizing-basic.css',
   'src/modulate-fluid-sizing-modern.css',
   'src/modulate-module-grid.css',
   'src/modulate-header.css'
@@ -24,7 +32,7 @@ if (fs.existsSync(distDir)) {
 fs.mkdirSync(distDir, { recursive: true });
 
 // Process each file
-files.forEach(file => {
+allFiles.forEach(file => {
   // Read the unminified content
   const input = fs.readFileSync(file, 'utf8');
 
@@ -41,7 +49,7 @@ files.forEach(file => {
 });
 
 // Merge and minify all files into one
-const mergedInput = files.map(file => fs.readFileSync(file, 'utf8')).join('\n');
+const mergedInput = package1Files.map(file => fs.readFileSync(file, 'utf8')).join('\n');
 
 // Write the unminified merged file
 fs.writeFileSync('dist/css/modulate.css', mergedInput, 'utf8');
