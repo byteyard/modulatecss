@@ -2,12 +2,6 @@
     Fluid Sizing
 ==================================================================================================== */
 @layer base {
-    :root {
-        --rem: 16; /* Pixel per REM for General Fluid Sizing */
-        --s-min: 400; /* Screen Size Min for General Fluid Sizing */
-        --s-max: 1400; /* Screen Size Max for General Fluid Sizing */
-    }
-
     body * {
         /* ----------------------------------------------------------------------------------------
             Block

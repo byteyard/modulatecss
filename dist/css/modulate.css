@@ -18,31 +18,6 @@
     }
 }
 
-/* ====================================================================================================
-    Localization
-==================================================================================================== */
-@layer base {
-    blockquote,
-    q {
-        quotes: var(--quotes-primary-open) var(--quotes-primary-close) var(--quotes-secondary-open) var(--quotes-secondary-close);
-    }
-
-    blockquote:not(:has(p))::before,
-    q:not(:has(p))::before,
-    blockquote:has(p) p:first-of-type::before,
-    q:has(p) p:first-of-type::before {
-        content: open-quote;
-        margin-inline-end: var(--quotes-spacing);
-    }
-
-    blockquote:not(:has(p))::after,
-    q:not(:has(p))::after,
-    blockquote:has(p) p:last-of-type::after,
-    q:has(p) p:last-of-type::after {
-        content: close-quote;
-        margin-inline-start: var(--quotes-spacing);
-    }
-}
 
 /* ====================================================================================================
     Reset
@@ -189,6 +164,32 @@
     }
 }
 
+
+/* ====================================================================================================
+    Localization
+==================================================================================================== */
+@layer base {
+    blockquote,
+    q {
+        quotes: var(--quotes-primary-open) var(--quotes-primary-close) var(--quotes-secondary-open) var(--quotes-secondary-close);
+    }
+
+    blockquote:not(:has(p))::before,
+    q:not(:has(p))::before,
+    blockquote:has(p) p:first-of-type::before,
+    q:has(p) p:first-of-type::before {
+        content: open-quote;
+        margin-inline-end: var(--quotes-spacing);
+    }
+
+    blockquote:not(:has(p))::after,
+    q:not(:has(p))::after,
+    blockquote:has(p) p:last-of-type::after,
+    q:has(p) p:last-of-type::after {
+        content: close-quote;
+        margin-inline-start: var(--quotes-spacing);
+    }
+}
 /* ====================================================================================================
     Fluid Sizing
 ==================================================================================================== */
@@ -376,12 +377,6 @@
     Fluid Sizing
 ==================================================================================================== */
 @layer base {
-    :root {
-        --rem: 16; /* Pixel per REM for General Fluid Sizing */
-        --s-min: 400; /* Screen Size Min for General Fluid Sizing */
-        --s-max: 1400; /* Screen Size Max for General Fluid Sizing */
-    }
-
     body * {
         /* ----------------------------------------------------------------------------------------
             Block
