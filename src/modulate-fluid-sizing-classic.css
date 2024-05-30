@@ -50,10 +50,10 @@
         --mt-r: calc((((var(--s-min) * var(--mt-max)) - (var(--s-max) * var(--mt-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
         --mt: clamp(calc((var(--mt-min) / var(--rem)) * 1rem), calc(var(--mt-v) + var(--mt-r) * 1rem), calc((var(--mt-max) / var(--rem)) * 1rem));
 
-        /* margin-bottom: mb */
-        --mb-v: calc(((100 * (var(--mb-max) - var(--mb-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --mb-r: calc((((var(--s-min) * var(--mb-max)) - (var(--s-max) * var(--mb-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --mb: clamp(calc((var(--mb-min) / var(--rem)) * 1rem), calc(var(--mb-v) + var(--mb-r) * 1rem), calc((var(--mb-max) / var(--rem)) * 1rem));
+        /* margin-bottom: mgb */
+        --mgb-v: calc(((100 * (var(--mgb-max) - var(--mgb-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --mgb-r: calc((((var(--s-min) * var(--mgb-max)) - (var(--s-max) * var(--mgb-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --mgb: clamp(calc((var(--mgb-min) / var(--rem)) * 1rem), calc(var(--mgb-v) + var(--mgb-r) * 1rem), calc((var(--mgb-max) / var(--rem)) * 1rem));
 
         /* margin-left: ml */
         --ml-v: calc(((100 * (var(--ml-max) - var(--ml-min))) / (var(--s-max) - var(--s-min))) * 1vw);
@@ -98,10 +98,10 @@
         --btw-r: calc((((var(--s-min) * var(--btw-max)) - (var(--s-max) * var(--btw-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
         --btw: clamp(calc((var(--btw-min) / var(--rem)) * 1rem), calc(var(--btw-v) + var(--btw-r) * 1rem), calc((var(--btw-max) / var(--rem)) * 1rem));
 
-        /* border-bottom-width: bbw */
-        --bbw-v: calc(((100 * (var(--bbw-max) - var(--bbw-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --bbw-r: calc((((var(--s-min) * var(--bbw-max)) - (var(--s-max) * var(--bbw-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --bbw: clamp(calc((var(--bbw-min) / var(--rem)) * 1rem), calc(var(--bbw-v) + var(--bbw-r) * 1rem), calc((var(--bbw-max) / var(--rem)) * 1rem));
+        /* border-bottom-width: bbwth */
+        --bbwth-v: calc(((100 * (var(--bbwth-max) - var(--bbwth-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --bbwth-r: calc((((var(--s-min) * var(--bbwth-max)) - (var(--s-max) * var(--bbwth-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --bbwth: clamp(calc((var(--bbwth-min) / var(--rem)) * 1rem), calc(var(--bbwth-v) + var(--bbwth-r) * 1rem), calc((var(--bbwth-max) / var(--rem)) * 1rem));
 
         /* border-left-width: blw */
         --blw-v: calc(((100 * (var(--blw-max) - var(--blw-min))) / (var(--s-max) - var(--s-min))) * 1vw);
@@ -171,9 +171,9 @@
         --smt: clamp(calc((var(--smt-min) / var(--rem)) * 1rem), calc(var(--smt-v) + var(--smt-r) * 1rem), calc((var(--smt-max) / var(--rem)) * 1rem));
 
         /* scroll-margin-bottom: smb */
-        --smb-v: calc(((100 * (var(--smb-max) - var(--smb-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --smb-r: calc((((var(--s-min) * var(--smb-max)) - (var(--s-max) * var(--smb-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --smb: clamp(calc((var(--smb-min) / var(--rem)) * 1rem), calc(var(--smb-v) + var(--smb-r) * 1rem), calc((var(--smb-max) / var(--rem)) * 1rem));
+        --smbt-v: calc(((100 * (var(--smbt-max) - var(--smbt-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --smbt-r: calc((((var(--s-min) * var(--smbt-max)) - (var(--s-max) * var(--smbt-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --smbt: clamp(calc((var(--smbt-min) / var(--rem)) * 1rem), calc(var(--smbt-v) + var(--smbt-r) * 1rem), calc((var(--smbt-max) / var(--rem)) * 1rem));
 
         /* scroll-margin-left: sml */
         --sml-v: calc(((100 * (var(--sml-max) - var(--sml-min))) / (var(--s-max) - var(--s-min))) * 1vw);
@@ -190,10 +190,10 @@
         --spt-r: calc((((var(--s-min) * var(--spt-max)) - (var(--s-max) * var(--spt-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
         --spt: clamp(calc((var(--spt-min) / var(--rem)) * 1rem), calc(var(--spt-v) + var(--spt-r) * 1rem), calc((var(--spt-max) / var(--rem)) * 1rem));
 
-        /* scroll-padding-bottom: spb */
-        --spb-v: calc(((100 * (var(--spb-max) - var(--spb-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --spb-r: calc((((var(--s-min) * var(--spb-max)) - (var(--s-max) * var(--spb-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --spb: clamp(calc((var(--spb-min) / var(--rem)) * 1rem), calc(var(--spb-v) + var(--spb-r) * 1rem), calc((var(--spb-max) / var(--rem)) * 1rem));
+        /* scroll-padding-bottom: spbt */
+        --spbt-v: calc(((100 * (var(--spbt-max) - var(--spbt-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --spbt-r: calc((((var(--s-min) * var(--spbt-max)) - (var(--s-max) * var(--spbt-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --spbt: clamp(calc((var(--spbt-min) / var(--rem)) * 1rem), calc(var(--spbt-v) + var(--spbt-r) * 1rem), calc((var(--spbt-max) / var(--rem)) * 1rem));
 
         /* scroll-padding-left: spl */
         --spl-v: calc(((100 * (var(--spl-max) - var(--spl-min))) / (var(--s-max) - var(--s-min))) * 1vw);
