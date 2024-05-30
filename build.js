@@ -22,14 +22,6 @@ const packages = [
   ]
 ]
 
-const package1Files = [
-  'src/modulate-base.css',
-  'src/modulate-fluid-sizing-basic.css',
-  'src/modulate-fluid-sizing-modern.css',
-  'src/modulate-module-grid.css',
-  'src/modulate-header.css'
-];
-
 // Ensure the dist/css directory exists
 const distDir = 'dist/css';
 
