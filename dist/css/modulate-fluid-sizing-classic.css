@@ -2,6 +2,189 @@
     Fluid Sizing
 ==================================================================================================== */
 @layer base {
+    :root {
+        --rem: 16; /* Pixel per REM for General Fluid Sizing */
+        --s-min: 400; /* Screen Size Min for General Fluid Sizing */
+        --s-max: 1400; /* Screen Size Max for General Fluid Sizing */
+    }
+
+    body * {
+        /* ----------------------------------------------------------------------------------------
+            Text Formatting
+        */
+
+        /* font-size: fs */
+        --fs-v: calc(((100 * (var(--fs-max) - var(--fs-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --fs-r: calc((((var(--s-min) * var(--fs-max)) - (var(--s-max) * var(--fs-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --fs: clamp(calc((var(--fs-min) / var(--rem)) * 1rem), calc(var(--fs-v) + var(--fs-r) * 1rem), calc((var(--fs-max) / var(--rem)) * 1rem));
+
+        /* line-height: lh */
+        --lh-v: calc(((100 * (var(--lh-max) - var(--lh-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --lh-r: calc((((var(--s-min) * var(--lh-max)) - (var(--s-max) * var(--lh-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --lh: clamp(calc((var(--lh-min) / var(--rem)) * 1rem), calc(var(--lh-v) + var(--lh-r) * 1rem), calc((var(--lh-max) / var(--rem)) * 1rem));
+
+        /* letter-spacing: ls */
+        --ls-v: calc(((100 * (var(--ls-max) - var(--ls-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --ls-r: calc((((var(--s-min) * var(--ls-max)) - (var(--s-max) * var(--ls-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --ls: clamp(calc((var(--ls-min) / var(--rem)) * 1rem), calc(var(--ls-v) + var(--ls-r) * 1rem), calc((var(--ls-max) / var(--rem)) * 1rem));
+
+        /* word-spacing: ws */
+        --ws-v: calc(((100 * (var(--ws-max) - var(--ws-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --ws-r: calc((((var(--s-min) * var(--ws-max)) - (var(--s-max) * var(--ws-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --ws: clamp(calc((var(--ws-min) / var(--rem)) * 1rem), calc(var(--ws-v) + var(--ws-r) * 1rem), calc((var(--ws-max) / var(--rem)) * 1rem));
+
+        /* text-indent: ti */
+        --ti-v: calc(((100 * (var(--ti-max) - var(--ti-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --ti-r: calc((((var(--s-min) * var(--ti-max)) - (var(--s-max) * var(--ti-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --ti: clamp(calc((var(--ti-min) / var(--rem)) * 1rem), calc(var(--ti-v) + var(--ti-r) * 1rem), calc((var(--ti-max) / var(--rem)) * 1rem));
+
+        /* text-decoration-thickness: tdt */
+        --tdt-v: calc(((100 * (var(--tdt-max) - var(--tdt-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --tdt-r: calc((((var(--s-min) * var(--tdt-max)) - (var(--s-max) * var(--tdt-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --tdt: clamp(calc((var(--tdt-min) / var(--rem)) * 1rem), calc(var(--tdt-v) + var(--tdt-r) * 1rem), calc((var(--tdt-max) / var(--rem)) * 1rem));
+
+        /* text-underline-offset: tuo */
+        --tuo-v: calc(((100 * (var(--tuo-max) - var(--tuo-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --tuo-r: calc((((var(--s-min) * var(--tuo-max)) - (var(--s-max) * var(--tuo-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --tuo: clamp(calc((var(--tuo-min) / var(--rem)) * 1rem), calc(var(--tuo-v) + var(--tuo-r) * 1rem), calc((var(--tuo-max) / var(--rem)) * 1rem));
+
+        /* ----------------------------------------------------------------------------------------
+            Margin
+        */
+
+        /* margin: m */
+        --m-v: calc(((100 * (var(--m-max) - var(--m-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --m-r: calc((((var(--s-min) * var(--m-max)) - (var(--s-max) * var(--m-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --m: clamp(calc((var(--m-min) / var(--rem)) * 1rem), calc(var(--m-v) + var(--m-r) * 1rem), calc((var(--m-max) / var(--rem)) * 1rem));
+
+        /* ----------------------------------------------------------------------------------------
+            Padding
+        */
+
+        /* padding: p */
+        --p-v: calc(((100 * (var(--p-max) - var(--p-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --p-r: calc((((var(--s-min) * var(--p-max)) - (var(--s-max) * var(--p-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --p: clamp(calc((var(--p-min) / var(--rem)) * 1rem), calc(var(--p-v) + var(--p-r) * 1rem), calc((var(--p-max) / var(--rem)) * 1rem));
+
+        /* ----------------------------------------------------------------------------------------
+            Border Width
+        */
+
+        /* border-width: bw */
+        --bw-v: calc(((100 * (var(--bw-max) - var(--bw-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --bw-r: calc((((var(--s-min) * var(--bw-max)) - (var(--s-max) * var(--bw-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --bw: clamp(calc((var(--bw-min) / var(--rem)) * 1rem), calc(var(--bw-v) + var(--bw-r) * 1rem), calc((var(--bw-max) / var(--rem)) * 1rem));
+
+        /* ----------------------------------------------------------------------------------------
+            Border Radius
+        */
+
+        /* border-radius: br */
+        --br-v: calc(((100 * (var(--br-max) - var(--br-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --br-r: calc((((var(--s-min) * var(--br-max)) - (var(--s-max) * var(--br-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --br: clamp(calc((var(--br-min) / var(--rem)) * 1rem), calc(var(--br-v) + var(--br-r) * 1rem), calc((var(--br-max) / var(--rem)) * 1rem));
+
+        /* ----------------------------------------------------------------------------------------
+            Outline
+        */
+
+        /* outline-width: ow */
+        --ow-v: calc(((100 * (var(--ow-max) - var(--ow-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --ow-r: calc((((var(--s-min) * var(--ow-max)) - (var(--s-max) * var(--ow-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --ow: clamp(calc((var(--ow-min) / var(--rem)) * 1rem), calc(var(--ow-v) + var(--ow-r) * 1rem), calc((var(--ow-max) / var(--rem)) * 1rem));
+
+        /* outline-offset: oo */
+        --oo-v: calc(((100 * (var(--oo-max) - var(--oo-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --oo-r: calc((((var(--s-min) * var(--oo-max)) - (var(--s-max) * var(--oo-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --oo: clamp(calc((var(--oo-min) / var(--rem)) * 1rem), calc(var(--oo-v) + var(--oo-r) * 1rem), calc((var(--oo-max) / var(--rem)) * 1rem));
+
+        /* ----------------------------------------------------------------------------------------
+            Inset
+        */
+
+        /* inset: i */
+        --i-v: calc(((100 * (var(--i-max) - var(--i-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --i-r: calc((((var(--s-min) * var(--i-max)) - (var(--s-max) * var(--i-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --i: clamp(calc((var(--i-min) / var(--rem)) * 1rem), calc(var(--i-v) + var(--i-r) * 1rem), calc((var(--i-max) / var(--rem)) * 1rem));
+
+        /* ----------------------------------------------------------------------------------------
+            Grid, Flex and Columns
+        */
+
+        /* grid-auto-columns: gac */
+        --gac-v: calc(((100 * (var(--gac-max) - var(--gac-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --gac-r: calc((((var(--s-min) * var(--gac-max)) - (var(--s-max) * var(--gac-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --gac: clamp(calc((var(--gac-min) / var(--rem)) * 1rem), calc(var(--gac-v) + var(--gac-r) * 1rem), calc((var(--gac-max) / var(--rem)) * 1rem));
+
+        /* grid-auto-rows: gar */
+        --gar-v: calc(((100 * (var(--gar-max) - var(--gar-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --gar-r: calc((((var(--s-min) * var(--gar-max)) - (var(--s-max) * var(--gar-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --gar: clamp(calc((var(--gar-min) / var(--rem)) * 1rem), calc(var(--gar-v) + var(--gar-r) * 1rem), calc((var(--gar-max) / var(--rem)) * 1rem));
+
+        /* gap: g */
+        --g-v: calc(((100 * (var(--g-max) - var(--g-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --g-r: calc((((var(--s-min) * var(--g-max)) - (var(--s-max) * var(--g-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --g: clamp(calc((var(--g-min) / var(--rem)) * 1rem), calc(var(--g-v) + var(--g-r) * 1rem), calc((var(--g-max) / var(--rem)) * 1rem));
+
+        /* column-gap: cg */
+        --cg-v: calc(((100 * (var(--cg-max) - var(--cg-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --cg-r: calc((((var(--s-min) * var(--cg-max)) - (var(--s-max) * var(--cg-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --cg: clamp(calc((var(--cg-min) / var(--rem)) * 1rem), calc(var(--cg-v) + var(--cg-r) * 1rem), calc((var(--cg-max) / var(--rem)) * 1rem));
+
+        /* row-gap: rg */
+        --rg-v: calc(((100 * (var(--rg-max) - var(--rg-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --rg-r: calc((((var(--s-min) * var(--rg-max)) - (var(--s-max) * var(--rg-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --rg: clamp(calc((var(--rg-min) / var(--rem)) * 1rem), calc(var(--rg-v) + var(--rg-r) * 1rem), calc((var(--rg-max) / var(--rem)) * 1rem));
+
+        /* column-width: cw */
+        --cw-v: calc(((100 * (var(--cw-max) - var(--cw-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --cw-r: calc((((var(--s-min) * var(--cw-max)) - (var(--s-max) * var(--cw-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --cw: clamp(calc((var(--cw-min) / var(--rem)) * 1rem), calc(var(--cw-v) + var(--cw-r) * 1rem), calc((var(--cw-max) / var(--rem)) * 1rem));
+
+        /* column-rule-width: crw */
+        --crw-v: calc(((100 * (var(--crw-max) - var(--crw-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --crw-r: calc((((var(--s-min) * var(--crw-max)) - (var(--s-max) * var(--crw-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --crw: clamp(calc((var(--crw-min) / var(--rem)) * 1rem), calc(var(--crw-v) + var(--crw-r) * 1rem), calc((var(--crw-max) / var(--rem)) * 1rem));
+
+        /* flex-basis: fb */
+        --fb-v: calc(((100 * (var(--fb-max) - var(--fb-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --fb-r: calc((((var(--s-min) * var(--fb-max)) - (var(--s-max) * var(--fb-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --fb: clamp(calc((var(--fb-min) / var(--rem)) * 1rem), calc(var(--fb-v) + var(--fb-r) * 1rem), calc((var(--fb-max) / var(--rem)) * 1rem));
+
+        /* ----------------------------------------------------------------------------------------
+            Background
+        */
+
+        /* background-position-x: bpx */
+        --bpx-v: calc(((100 * (var(--bpx-max) - var(--bpx-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --bpx-r: calc((((var(--s-min) * var(--bpx-max)) - (var(--s-max) * var(--bpx-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --bpx: clamp(calc((var(--bpx-min) / var(--rem)) * 1rem), calc(var(--bpx-v) + var(--bpx-r) * 1rem), calc((var(--bpx-max) / var(--rem)) * 1rem));
+
+        /* background-position-y: bpy */
+        --bpy-v: calc(((100 * (var(--bpy-max) - var(--bpy-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --bpy-r: calc((((var(--s-min) * var(--bpy-max)) - (var(--s-max) * var(--bpy-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --bpy: clamp(calc((var(--bpy-min) / var(--rem)) * 1rem), calc(var(--bpy-v) + var(--bpy-r) * 1rem), calc((var(--bpy-max) / var(--rem)) * 1rem));
+
+        /* ----------------------------------------------------------------------------------------
+            Scroll
+        */
+
+        /* scroll-margin: sm */
+        --sm-v: calc(((100 * (var(--sm-max) - var(--sm-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --sm-r: calc((((var(--s-min) * var(--sm-max)) - (var(--s-max) * var(--sm-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --sm: clamp(calc((var(--sm-min) / var(--rem)) * 1rem), calc(var(--sm-v) + var(--sm-r) * 1rem), calc((var(--sm-max) / var(--rem)) * 1rem));
+
+        /* scroll-padding: sp */
+        --sp-v: calc(((100 * (var(--sp-max) - var(--sp-min))) / (var(--s-max) - var(--s-min))) * 1vw);
+        --sp-r: calc((((var(--s-min) * var(--sp-max)) - (var(--s-max) * var(--sp-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
+        --sp: clamp(calc((var(--sp-min) / var(--rem)) * 1rem), calc(var(--sp-v) + var(--sp-r) * 1rem), calc((var(--sp-max) / var(--rem)) * 1rem));
+    }
+}
+
+/* ====================================================================================================
+    Fluid Sizing
+==================================================================================================== */
+@layer base {
     body * {
         /* ----------------------------------------------------------------------------------------
             Block

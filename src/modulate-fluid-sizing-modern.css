@@ -202,20 +202,6 @@
         --iie: clamp(calc((var(--iie-min) / var(--rem)) * 1rem), calc(var(--iie-v) + var(--iie-r) * 1rem), calc((var(--iie-max) / var(--rem)) * 1rem));
 
         /* ----------------------------------------------------------------------------------------
-            Background
-        */
-
-        /* background-position-x: bpx */
-        --bpx-v: calc(((100 * (var(--bpx-max) - var(--bpx-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --bpx-r: calc((((var(--s-min) * var(--bpx-max)) - (var(--s-max) * var(--bpx-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --bpx: clamp(calc((var(--bpx-min) / var(--rem)) * 1rem), calc(var(--bpx-v) + var(--bpx-r) * 1rem), calc((var(--bpx-max) / var(--rem)) * 1rem));
-
-        /* background-position-y: bpy */
-        --bpy-v: calc(((100 * (var(--bpy-max) - var(--bpy-min))) / (var(--s-max) - var(--s-min))) * 1vw);
-        --bpy-r: calc((((var(--s-min) * var(--bpy-max)) - (var(--s-max) * var(--bpy-min))) / (var(--s-min) - var(--s-max))) / var(--rem));
-        --bpy: clamp(calc((var(--bpy-min) / var(--rem)) * 1rem), calc(var(--bpy-v) + var(--bpy-r) * 1rem), calc((var(--bpy-max) / var(--rem)) * 1rem));
-
-        /* ----------------------------------------------------------------------------------------
             Scroll
         */
 
