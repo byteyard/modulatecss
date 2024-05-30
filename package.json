@@ -1,7 +1,7 @@
 {
   "name": "modulatecss",
   "version": "1.0.24",
-  "description": "A versatile CSS framework for modern web development, supporting advanced features like Grid, Flexbox, and CSS custom properties for scalable, maintainable, and responsive designs.",
+  "description": "...",
   "main": "dist/css/modulate.min.css",
   "style": "dist/css/modulate.min.css",
   "files": [
@@ -24,5 +24,13 @@
   "devDependencies": {
     "csso": "^5.0.5",
     "csso-cli": "^4.0.2"
+  },
+  "modulatecss": {
+    "base": "dist/css/modulate-base.min.css",
+    "fluid-sizing-basic": "dist/css/modulate-fluid-sizing-basic.min.css",
+    "fluid-sizing-classic": "dist/css/modulate-fluid-sizing-classic.min.css",
+    "fluid-sizing-modern": "dist/css/modulate-fluid-sizing-modern.min.css",
+    "module-grid": "dist/css/modulate-module-grid.min.css",
+    "header": "dist/css/modulate-header.min.css"
   }
 }
