@@ -25,6 +25,42 @@ Or include it directly via CDN:
 ```
 
 ## Integration
+
+Depending on the features you need, you can import different CSS files:
+
+All:
+```js
+import 'modulatecss/dist/css/modulate.min.css';
+```
+
+Fluid Sizing Full:
+```js
+import 'modulatecss/dist/css/modulate-fluid-sizing.min.css';
+```
+
+Fluid Sizing Classic:
+```js
+import 'modulatecss/dist/css/modulate-fluid-sizing-classic.min.css';
+```
+
+Fluid Sizing Modern:
+```js
+import 'modulatecss/dist/css/modulate-fluid-sizing-modern.min.css';
+```
+
+Advanced Module Grid:
+```js
+import 'modulatecss/dist/css/modulate-grid.min.css';
+```
+
+Advanced Header:
+```js
+import 'modulatecss/dist/css/modulate-header.min.css';
+```
+
+Remember to replace 'modulatecss' with the path to your node_modules directory if you installed via npm, or with the CDN URL if you're using a CDN.
+
+
 **Next.js:**
 
 ```javascript
