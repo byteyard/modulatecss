@@ -1,6 +1,6 @@
 {
   "name": "modulatecss",
-  "version": "1.0.32",
+  "version": "1.0.33",
   "description": "...",
   "main": "dist/css/modulate.min.css",
   "style": "dist/css/modulate.min.css",
