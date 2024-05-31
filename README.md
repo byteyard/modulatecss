@@ -21,7 +21,7 @@ npm install modulatecss
 Or include it directly via CDN:
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/modulate@1.0.0/dist/css/modulate.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/modulate@latest/dist/css/modulate.min.css" rel="stylesheet">
 ```
 
 ## Integration
